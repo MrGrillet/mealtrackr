@@ -17,7 +17,6 @@
 //= require popper
 //= cable
 //= require toastr
-//= require_tree .
 //= flickity.min
 //= easypiechart.min
 //= parallax
@@ -33,6 +32,7 @@
 //= spectragram.min
 //= smooth-scroll.min
 //= scripts
+//= require_tree .
 
 
 
