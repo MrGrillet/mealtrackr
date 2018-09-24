@@ -20,6 +20,7 @@ gem 'devise'
 gem 'devise-bootstrap-views', '~> 1.0'
 gem 'toastr-rails'
 gem 'jquery-rails'
+gem 'rails_12factor', group: :production
 
 
 
