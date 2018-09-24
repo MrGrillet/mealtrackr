@@ -1,0 +1,37 @@
+<div class="nav-container ">
+    <nav class="bar bar-4 bar--transparent bar--absolute" data-fixed-at="200">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-1 col-md-2 col-md-offset-0 col-4">
+                    <div class="bar__module">
+                        <a href="index.html">
+                          <%= image_tag("logo-dark.png", :alt => "logo", :class => "logo logo-dark") %>
+                          <%= image_tag("logo-light.png", :alt => "logo", :class => "logo logo-light") %>
+                        </a>
+                    </div>
+                    <!--end module-->
+                </div>
+                <div class="col-lg-4 col-lg-offset-0 col-md-5 col-md-offset-0 col-8 col-offset-2">
+                    <div class="bar__module">
+
+
+                        <a class="btn btn--sm type--uppercase" href="<%# new_user_registration_path %>">
+                            <span class="btn__text">
+                                Sign In
+                            </span>
+                        </a>
+                        <a class="btn btn--sm btn--primary type--uppercase" href="/users/sign_up">
+                            <span class="btn__text">
+                                Sign up
+                            </span>
+                        </a>
+                    </div>
+                    <!--end module-->
+                </div>
+            </div>
+            <!--end of row-->
+        </div>
+        <!--end of container-->
+    </nav>
+    <!--end bar-->
+</div>
