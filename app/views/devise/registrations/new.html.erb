@@ -1,0 +1,67 @@
+<section class="imageblock switchable feature-large height-100">
+    <div class="imageblock__content col-lg-6 col-md-4 pos-right">
+        <div class="background-image-holder">
+          <%= image_tag("inner-7.jpg") %>
+        </div>
+    </div>
+    <div class="container pos-vertical-center">
+        <div class="row">
+            <div class="col-lg-5 col-md-7">
+                <h2>Create a Mealtrackr account</h2>
+                <p class="lead">Get started with a 14 day free trial, No credit card required &mdash; cancel at any time.</p>
+                <a class="btn block btn--icon bg--facebook type--uppercase" href="page-accounts-create-2.html#">
+                    <span class="btn__text">
+                        <i class="socicon-facebook"></i>
+                        Sign up with Facebook
+                    </span>
+                </a>
+                <a class="btn block btn--icon bg--twitter type--uppercase" href="page-accounts-create-2.html#">
+                    <span class="btn__text">
+                        <i class="socicon-twitter"></i>
+                        Sign up with Twitter
+                    </span>
+                </a>
+                <hr data-title="OR">
+
+
+                  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                    <%= bootstrap_devise_error_messages! %>
+                    <div class="row">
+                        <div class="col-12">
+                            <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
+
+
+                        </div>
+                        <div class="col-12">
+                            <%= f.password_field :password, autocomplete: 'current-password', class: 'form-control' %>
+                            <% if @minimum_password_length %>
+                              <small class="form-text text-muted"><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></small>
+                            <% end %>
+                        </div>
+
+
+                        <div class="col-12">
+                            <%= f.password_field :password_confirmation, autocomplete: 'current-password', class: 'form-control' %>
+                        </div>
+
+
+                        <div class="col-12">
+                            <%= f.submit t('.sign_up'), class: 'btn btn--primary type--uppercase' %>
+                        </div>
+                        <% end %>
+                        <div class="col-12">
+                            <span class="type--fine-print">By signing up, you agree to the
+                                <a href="page-accounts-create-2.html#">Terms of Service</a>
+                            </span>
+
+                            <%= render 'devise/shared/links' %>
+                        </div>
+                    </div>
+                    <!--end row-->
+                </form>
+            </div>
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>

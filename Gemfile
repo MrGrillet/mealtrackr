@@ -16,7 +16,10 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'bootstrap', '~> 4.1.3'
-
+gem 'devise'
+gem 'devise-bootstrap-views', '~> 1.0'
+gem 'toastr-rails'
+gem 'jquery-rails'
 
 
 
