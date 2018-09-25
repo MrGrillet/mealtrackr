@@ -13,26 +13,28 @@
 //= require bootstrap-sprockets
 //= require rails-ujs
 //= require turbolinks
-//= require popper
-//= require toastr
 //= require jquery3
+//= require popper
 //= require app
 //= require cable
-//= require countdown.min
-//= require datepicker
-//= require easypiechart.min
 //= require flickity.min
-//= require granim.min
-//= require isotope.min
-//= require lightbox.min
+//= require easypiechart.min
 //= require parallax
-//= require scripts
-//= require smooth-scroll.min
-//= require spectragram.min
-//= require twitterfetcher.min
 //= require typed.min
+//= require datepicker
+//= require isotope.min
 //= require ytplayer.min
-//= require_tree .
+//= require lightbox.min
+//= require granim.min
+//= require jquery.steps.min
+//= require countdown.min
+//= require twitterfetcher.min
+//= require spectragram.min
+//= require smooth-scroll.min
+//= require scripts
+//= require toastr
+
+
 
 
 
