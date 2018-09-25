@@ -12,7 +12,7 @@ module Mealtrackr
     config.load_defaults 5.1
 
     config.assets.initialize_on_precompile = false
-
+    config.assets.precompile << 'application_body.js'
 
     # config.serve_static_assets = true
     # Settings in config/environments/* take precedence over those specified here.

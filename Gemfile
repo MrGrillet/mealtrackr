@@ -19,9 +19,10 @@ gem 'sprockets'
 gem 'bootstrap', '~> 4.1.3'
 gem 'devise'
 gem 'devise-bootstrap-views', '~> 1.0'
-gem 'toastr-rails'
 gem 'jquery-rails'
+gem 'toastr-rails'
 gem 'rails_12factor', group: :production
+gem 'sprockets_better_errors'
 
 
 
