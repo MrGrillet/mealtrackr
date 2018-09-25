@@ -22,7 +22,7 @@ gem 'devise-bootstrap-views', '~> 1.0'
 gem 'jquery-rails'
 gem 'toastr-rails'
 gem 'rails_12factor', group: :production
-gem 'sprockets_better_errors'
+
 
 
 
