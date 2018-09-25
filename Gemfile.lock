@@ -178,8 +178,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sprockets_better_errors (0.0.4)
-      sprockets-rails (>= 1.0.0)
     thor (0.20.0)
     thread_safe (0.3.6)
     tilt (2.0.8)
@@ -227,7 +225,6 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   sprockets
-  sprockets_better_errors
   toastr-rails
   turbolinks (~> 5)
   tzinfo-data
