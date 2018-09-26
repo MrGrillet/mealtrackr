@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  notes: MyText
+  mood_rating: 1
+  sleep_rating: 1
+  physical_symptoms: MyText
+  psychological_symptoms: MyText
+  timestamps: MyString
+
+two:
+  title: MyString
+  notes: MyText
+  mood_rating: 1
+  sleep_rating: 1
+  physical_symptoms: MyText
+  psychological_symptoms: MyText
+  timestamps: MyString

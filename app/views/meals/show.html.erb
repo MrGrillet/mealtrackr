@@ -1,0 +1,18 @@
+<br>
+<br>
+<br>
+<h1><%= @meal.title %></h1>
+
+
+<%= @meal.title %><br>
+<%= @meal.notes %><br>
+<%= @meal.mood_rating %><br>
+<%= @meal.sleep_rating %><br>
+<%= @meal.physical_symptoms %><br>
+<%= @meal.psychological_symptoms %><br>
+
+
+
+<%= link_to 'Dashboard', dashboard_path, class: 'btn btn--primary' %>
+<%= link_to 'Edit', edit_meal_path(@meal) %> |
+        

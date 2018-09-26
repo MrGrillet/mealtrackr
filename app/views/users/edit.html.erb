@@ -6,18 +6,12 @@
                     <div class="text-block text-center">
                         <img alt="avatar" src="img/avatar-round-3.png" class="image--sm" />
                         <span class="h5">Lucas Banks</span>
-                        <!-- <span>Pro Account</span> -->
-                        <!-- <span class="label">Pro</span> -->
+                        <span>Pro Account</span>
+                        <span class="label">Pro</span>
                     </div>
                     <hr>
                     <div class="text-block">
                         <ul class="menu-vertical">
-                          <li>
-                            <%= link_to 'Dashboard', dashboard_path %>
-                          </li>
-                          <li>
-                            <%= link_to 'Add Meal', new_meal_path %>
-                          </li>
                             <li>
                                 <a href="page-accounts-settings.html#" data-toggle-class=".account-tab:not(.hidden);hidden|#account-profile;hidden">Profile</a>
                             </li>
@@ -33,9 +27,6 @@
                             <li>
                                 <a href="page-accounts-settings.html#" data-toggle-class=".account-tab:not(.hidden);hidden|#account-delete;hidden">Delete Account</a>
                             </li>
-                            <li>
-                              <%= link_to t('.back'), :back %>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -43,57 +34,32 @@
             <div class="col-lg-8">
                 <div class="boxed boxed--lg boxed--border">
                     <div id="account-profile" class="account-tab">
-                      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-                        <%= bootstrap_devise_error_messages! %>
                         <h4>Profile</h4>
                         <form>
                             <div class="row">
-                              <div class="col-md-6">
-                                  <label>Profile Image</label>
-                                  <button class="btn btn--primary text-white">Upload</button>
-                              </div>
-                              <div class="col-md-6">
-
-                              </div>
                                 <div class="col-md-6">
-                                    <label>First Name:</label>
-                                    <input type="text" name="name" value="" />
+                                    <label>Real Name:</label>
+                                    <input type="text" name="name" value="Lucas Banks" />
                                 </div>
                                 <div class="col-md-6">
-                                    <label>Last Name:</label>
-                                    <input type="text" name="display-name" value="" />
+                                    <label>Display Name:</label>
+                                    <input type="text" name="display-name" value="l_banks" />
                                 </div>
                                 <div class="col-md-12">
-                                    <label>URL:</label>
-                                    <input type="text" name="display-name" value="" />
+                                    <label>Email Address:</label>
+                                    <input type="email" name="email" value="l_banks@stack.net" />
+                                </div>
+                                <div class="col-md-12">
+                                    <label>Location:</label>
+                                    <input type="text" name="location" value="Melbourne" />
+                                </div>
+                                <div class="col-md-12">
+                                    <label>Website:</label>
+                                    <input type="text" name="website" value="http://mrare.co" />
                                 </div>
                                 <div class="col-md-12">
                                     <label>Bio:</label>
                                     <textarea rows="4" name="bio"></textarea>
-                                </div>
-                                <div class="col-md-12">
-                                    <label>Email Address:</label>
-                                    <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
-                                </div>
-                                <div class="col-md-12">
-                                    <label>Website:</label>
-                                    <input type="text" name="website" value="" />
-                                </div>
-                                <div class="col-md-12">
-                                    <label>Twitter</label>
-                                    <input type="text" name="website" value="" />
-                                </div>
-                                <div class="col-md-12">
-                                    <label>Instagram</label>
-                                    <input type="text" name="website" value="" />
-                                </div>
-                                <div class="col-md-12">
-                                    <label>Facebook:</label>
-                                    <input type="text" name="website" value="" />
-                                </div>
-                                <div class="col-md-12">
-                                    <label>lnks.to:</label>
-                                    <input type="text" name="website" value="" />
                                 </div>
                                 <div class="col-md-12">
                                     <div class="input-checkbox input-checkbox--switch">
@@ -175,43 +141,32 @@
                     <div id="account-password" class="hidden account-tab">
                         <h4>Password</h4>
                         <p>Passwords must be at least 6 characters in length.</p>
-
-
-
-
-
+                        <form>
                             <div class="row">
-                              <div class="col-12">
-                                  <label>Old Password:</label>
-                                  <%= f.password_field :password, autocomplete: 'new-password', class: 'form-control' %>
-
-                                  <small class="form-text text-muted"><%= t('.leave_blank_if_you_don_t_want_to_change_it') %></small>
-                              </div>
-
-
                                 <div class="col-12">
+                                    <label>Old Password:</label>
+                                    <input type="password" name="old-password" />
+                                </div>
+                                <div class="col-md-6">
                                     <label>New Password:</label>
-                                    <%= f.password_field :password, autocomplete: 'new-password', class: 'form-control' %>
-
-                                    <small class="form-text text-muted"><%= t('.leave_blank_if_you_don_t_want_to_change_it') %></small>
+                                    <input type="password" name="new-password" />
                                 </div>
-                                <div class="col-md-12">
-                                    <label>Confirm Password:</label>
-                                    <%= f.password_field :password_confirmation, autocomplete: 'new-password', class: 'form-control'  %>
+                                <div class="col-md-6">
+                                    <label>Retype New Password:</label>
+                                    <input type="password" name="new-password-confirm" />
                                 </div>
-
-                                <div class="col-lg-3 col-md-4 mt-4">
-                                    <%= f.submit t('.update'), class: 'btn btn-primary' %>
+                                <div class="col-lg-3 col-md-4">
+                                    <button type="submit" class="btn btn--primary type--uppercase">Save Password</button>
                                 </div>
                             </div>
-
+                        </form>
                     </div>
                     <div id="account-delete" class="hidden account-tab">
                         <h4>Delete Account</h4>
                         <p>Permanently remove your account using the button below. Warning, this action is permanent.</p>
-
-                          <%= link_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete, class: "btn bg--error type--uppercase text-white btn-block" %>.</p>
-
+                        <form>
+                            <button type="submit" class="btn bg--error type--uppercase">Delete Account</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -220,6 +175,3 @@
     </div>
     <!--end of container-->
 </section>
-
-
-<% end %>
