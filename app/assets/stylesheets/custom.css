@@ -13,3 +13,10 @@
  #toast-container > .toast-error {
    background-color: red;
  }
+
+
+.food-colour {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}

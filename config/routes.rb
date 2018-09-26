@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   resources :meals
   resources :foods
   resources :users
-
+  resources :food_categories, :path => '/food-categories'
 end
