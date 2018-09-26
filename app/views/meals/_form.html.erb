@@ -79,7 +79,7 @@
     <% if @meal.title %>
      | <%= link_to 'New', new_meal_path %> |
       <%= link_to 'View', @meal %> |
-      <%= link_to 'Delete', meal_path(@meal), class: "danger" , method: :delete, data: {confirm: "Are you sure you want to delete the meal?"} %>
+      <%# link_to 'Delete', meal_path(@meal), class: "danger" , method: :delete, data: {confirm: "Are you sure you want to delete the meal?"} %>
     <% end %>
     <%= form.submit 'Submit →', class: "btn btn-outline-dark float-right" %>
   </div>

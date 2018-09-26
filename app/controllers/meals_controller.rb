@@ -2,7 +2,7 @@ class MealsController < ApplicationController
   before_action :set_meal, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    @meals = Meal.sorted
+    @meals = Meal.where(user: current_user).sorted
   end
 
   def show
@@ -17,6 +17,8 @@ class MealsController < ApplicationController
 
   def create
     @meal = Meal.new(meal_params)
+    @meal.user = current_user
+
 
     respond_to do |format|
       if @meal.save
@@ -62,6 +64,7 @@ class MealsController < ApplicationController
         :sleep_rating,
         :physical_symptoms,
         :psychological_symptoms
+
       )
     end
 end
