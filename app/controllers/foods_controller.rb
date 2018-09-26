@@ -50,7 +50,7 @@ class FoodsController < ApplicationController
   end
 
   private
-    def set_meal
+    def set_food
       @food = Food.find(params[:id])
     end
 

@@ -2,8 +2,16 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1><%= @meal.title %></h1>
-
+                <h1><%= @food.title %></h1>
+                <ol class="breadcrumbs">
+                    <li>
+                        <a href="portfolio-single-1.html#">Home</a>
+                    </li>
+                    <li>
+                        <a href="portfolio-single-1.html#">Portfolio</a>
+                    </li>
+                    <li>Nike Active</li>
+                </ol>
                 <hr>
             </div>
         </div>
@@ -16,85 +24,33 @@
         <div class="row justify-content-between">
             <div class="col-md-3 col-lg-2">
                 <div class="text-block">
-                    <span class="h5">Options:</span>
+                    <span class="h5">Client:</span>
+                    <span>Nike Active</span>
+                </div>
+                <div class="text-block">
+                    <span class="h5">Project Link:</span>
                     <span>
-                      <%= link_to 'Edit', edit_meal_path(@meal) %>
+                        <a href="portfolio-single-1.html#">http://projectsite.io/</a>
                     </span>
                 </div>
             </div>
             <div class="col-md-5 col-lg-5">
                 <div class="text-block">
-                    <span class="h5">Notes:</span>
-                    <p><%= @meal.notes %></p>
-
-                    <span class="h5">Psychological Symptoms:</span>
-                    <p><%= @meal.psychological_symptoms %></p>
-
-                    <span class="h5">Physical Symptoms:</span>
-                    <p><%= @meal.physical_symptoms %></p>
+                    <span class="h5">Brief:</span>
+                    <p>
+                        Co-working paradigm piverate innovate affordances user centered design personas pair programming Steve Jobs iterate earned media. Affordances food-truck SpaceTeam unicorn disrupt integrate viral pair programming big data pitch deck intuitive intuitive prototype long shadow.
+                    </p>
                 </div>
             </div>
             <div class="col-md-4 col-lg-3">
                 <div class="text-block">
-                    <span class="h5">Foods:</span>
+                    <span class="h5">Services rendered:</span>
                     <ul class="bullets">
-                        <li><a href="#"><span class="badge badge-primary">Chicken</span></a></li>
-                        <li><a href="#"><span class="badge badge-primary">Chicken</span></a></li>
-                        <li><a href="#"><span class="badge badge-primary">Chicken</span></a></li>
+                        <li>Branding</li>
+                        <li>Print Collateral</li>
+                        <li>Web Design</li>
+                        <li>Digital Strategy</li>
                     </ul>
-                </div>
-            </div>
-        </div>
-        <!--end of row-->
-    </div>
-    <!--end of container-->
-</section>
-<section class="text-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-12">
-                <div class="feature">
-                    <div class="radial" data-value="<%= @meal.mood_rating * 10 %>" data-size="208" data-bar-width="8" data-color="#4a90e2">
-                        <span class="h3 radial__label">Mood</span>
-                    </div>
-                    <!--end radial-->
-                    <p>
-                        Stack is built with customization and ease-of-use at its core — whether you're a seasoned developer or just starting out.
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-4 col-12">
-                <div class="feature">
-                    <div class="radial" data-value="66" data-size="208" data-bar-width="8" data-color="#4a90e2">
-                        <span class="h3 radial__label">Focus</span>
-                    </div>
-                    <!--end radial-->
-                    <p>
-                        Select from over 270 interface blocks, customise the look to build your perfect page.
-                    </p>
-                </div>
-            </div>
-
-            <div class="col-md-4 col-12">
-                <div class="feature">
-                    <div class="radial" data-value="66" data-size="208" data-bar-width="8" data-color="#4a90e2">
-                        <span class="h3 radial__label">Pain</span>
-                    </div>
-                    <!--end radial-->
-                    <p>
-                        Select from over 270 interface blocks, customise the look to build your perfect page.
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-4 col-12">
-                <div class="feature">
-                    <div class="radial" data-value="<%= @meal.sleep_rating * 10 %>" data-size="208" data-bar-width="8" data-color="#4a90e2">
-                        <span class="h3 radial__label">Sleep</span>
-                    </div>
-                    <!--end radial-->
-                    <p>
-                        Download your page as a semantic HTML document and easily make further customisations and additions in your editor.
-                    </p>
                 </div>
             </div>
         </div>

@@ -2,7 +2,7 @@ class MealsController < ApplicationController
   before_action :set_meal, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    @meals = Meals.sorted
+    @meals = Meal.sorted
   end
 
   def show
@@ -31,7 +31,7 @@ class MealsController < ApplicationController
 
   def update
     respond_to do |format|
-      if @food.update(food_params)
+      if @meal.update(meal_params)
         format.html { redirect_to @meal, notice: 'Meal was successfully updated.' }
         format.json { render :show, status: :ok, location: @meal }
       else
@@ -44,7 +44,7 @@ class MealsController < ApplicationController
   def destroy
     @meal.destroy
     respond_to do |format|
-      format.html { redirect_to foods_url, notice: 'Meal was successfully destroyed.' }
+      format.html { redirect_to meals_url, notice: 'Meal was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

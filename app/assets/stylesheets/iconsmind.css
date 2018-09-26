@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'iconsmind';
-  src:  font-url('fonts/iconsmind-u2jiyw.eot');
-  src:  font-url('fonts/iconsmind-u2jiyw.eot#iefix') format('embedded-opentype'),
-    font-url('fonts/iconsmind-u2jiyw.ttf') format('truetype'),
-    font-url('fonts/iconsmind-u2jiyw.woff') format('woff'),
-    font-url('fonts/iconsmind-u2jiyw.svg#iconsmind') format('svg');
+  src:  font-url('iconsmind-u2jiyw.eot');
+  src:  font-url('iconsmind-u2jiyw.eot#iefix') format('embedded-opentype'),
+    font-url('iconsmind-u2jiyw.ttf') format('truetype'),
+    font-url('iconsmind-u2jiyw.woff') format('woff'),
+    font-url('iconsmind-u2jiyw.svg#iconsmind') format('svg');
   font-weight: normal;
   font-style: normal;
 }
