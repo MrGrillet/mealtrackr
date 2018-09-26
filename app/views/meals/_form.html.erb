@@ -1,5 +1,3 @@
-<h3>Meal form</h3>
-
 <%= form_with(model: @meal, local: true) do |form| %>
   <% if @meal.errors.any? %>
     <div id="error_explanation">
@@ -13,74 +11,77 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= form.text_field :title, id: :meal_title, class: "form-control",
-    placeholder: "Title", autofocus: true, autocomplete: "off" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.text_area :notes, id: :notes, rows: 5, class: "form-control",
-    placeholder: "What did you eat?",
-    autofocus: true %>
-  </div>
-
   <div class="form-group row">
-    <p class="col-sm-4 col-form-label">Mood</p>
-  	<div class="col">
-  		<%= form.select :mood_rating, 1..10 %>
-  	</div>
-  </div>
-
-  <div class="form-group row">
-    <p class="col-sm-4 col-form-label">Sleep Rating</p>
+    <h3 class="col-sm-4 col-form-label">Title</h3>
     <div class="col">
-      <%= form.select :sleep_rating, 1..10 %>
-    </div>
+      <%= form.text_field :title, id: :meal_title, class: "form-control",
+    placeholder: "", autofocus: true %>
+  </div>
   </div>
 
   <div class="form-group row">
     <p class="col-sm-4 col-form-label">Time of day</p>
+    <div class="col">
+      <%= form.select :meal_type, ['Breakfast', 'Lunch', 'Snack', 'Dinner', 'Late Snack'] %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <p class="col-sm-4 col-form-label">Notes</p>
+    <div class="col">
+      <%= form.text_area :notes, id: :notes, rows: 5, class: "form-control",
+      placeholder: "",
+      autofocus: true %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <p class="col-sm-4 col-form-label">Mood Rating</p>
   	<div class="col">
-  		<%= form.select :meal_time, ['breakfast', 'lunch', 'snack', 'dinner', 'late snack'] %>
+  		<%= form.select :mood_rating, options_for_select(1..10, 5) %>
   	</div>
+  </div>
+
+  <div class="form-group row">
+    <p class="col-sm-4 col-form-label">Pain Rating</p>
+    <div class="col">
+      <%= form.select :sleep_rating, options_for_select(0..10) %>
+    </div>
   </div>
 
   <div class="form-group row">
     <p class="col-sm-4 col-form-label">Amount you drank in cups</p>
     <div class="col">
-      <%= form.select :drink_volume, 1..10 %>
+      <%= form.select :drink_count, options_for_select(0..10) %>
     </div>
   </div>
 
-
-  <div class="form-group row">
-    <p class="col-sm-4 col-form-label">Foods and Drinks</p>
-    <div class="col">
-      <%# form.collection_check_boxes :category_ids, Category.all, :id, :name do |cb| %>
-        <%# cb.label(class: "checkbox_inline input_checkbox")
-          cb.check_box(class: "checkbox mr-1 ml-3") + cb.text  %>
-      <%# end %>
-    </div>
+  <div class="col-md-12 text-center boxed">
+      <h5></h5>
   </div>
 
   <div class="form-group row">
-    <p class="col-sm-4 col-form-label">Tags</p>
+    <p class="col-sm-4 col-form-label">Foods and Drinks in meal</p>
     <div class="col">
-      <%# form.collection_check_boxes :tag_ids, Tag.all, :id, :name do |cb| %>
-        <%# cb.label(class: "checkbox_inline input_checkbox")
-          cb.check_box(class: "checkbox mr-1 ml-3") + cb.text  %>
-      <%# end %>
+      <%= form.collection_check_boxes :food_ids, Food.all, :id, :title do |cb| %>
+        <div class="col-md-3 col-6 text-center">
+          <span class="block"><%= cb.text %></span>
+          <div class="input-checkbox">
+            <%= cb.check_box  %>
+            <label></label>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
-
 
   <div class="actions mt-5">
+    <%= form.submit 'Submit →', class: "btn btn-outline-dark float-right" %>
     <%= link_to 'Dashboard', dashboard_path %>
     <% if @meal.title %>
      | <%= link_to 'New', new_meal_path %> |
       <%= link_to 'View', @meal %> |
       <%# link_to 'Delete', meal_path(@meal), class: "danger" , method: :delete, data: {confirm: "Are you sure you want to delete the meal?"} %>
     <% end %>
-    <%= form.submit 'Submit →', class: "btn btn-outline-dark float-right" %>
   </div>
 <% end %>

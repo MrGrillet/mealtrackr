@@ -1,106 +1,82 @@
 <section>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1><%= @meal.title %></h1>
-
-                <hr>
-            </div>
-        </div>
-        <!--end of row-->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1><%= @meal.title %></h1><%= link_to 'Edit', edit_meal_path(@meal) %>
+        <hr>
+      </div>
     </div>
-    <!--end of container-->
-</section>
-<section>
-    <div class="container">
-        <div class="row justify-content-between">
-            <div class="col-md-3 col-lg-2">
-                <div class="text-block">
-                    <span class="h5">Options:</span>
-                    <span>
-                      <%= link_to 'Edit', edit_meal_path(@meal) %>
-                    </span>
-                </div>
-            </div>
-            <div class="col-md-5 col-lg-5">
-                <div class="text-block">
-                    <span class="h5">Notes:</span>
-                    <p><%= @meal.notes %></p>
-
-                    <span class="h5">Psychological Symptoms:</span>
-                    <p><%= @meal.psychological_symptoms %></p>
-
-                    <span class="h5">Physical Symptoms:</span>
-                    <p><%= @meal.physical_symptoms %></p>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-3">
-                <div class="text-block">
-                    <span class="h5">Foods:</span>
-                    <ul class="bullets">
-                        <li><a href="#"><span class="badge badge-primary">Chicken</span></a></li>
-                        <li><a href="#"><span class="badge badge-primary">Chicken</span></a></li>
-                        <li><a href="#"><span class="badge badge-primary">Chicken</span></a></li>
-                    </ul>
-                </div>
-            </div>
+    <div class="row justify-content-between">
+      <div class="col-md-4 col-lg-3">
+        <div class="text-block">
+          <ul class="">
+            <% @meal.foods.each do |food| %>
+              <li><a href="#">
+                <span class="badge badge-primary"><%= food.title %></span></a>
+              </li>
+            <% end %>
+          </ul>
         </div>
-        <!--end of row-->
+      </div>
+      <div class="col">
+        <div class="text-block">
+          <h3>Notes</h3>
+          <p><%= @meal.notes %></p>
+        </div>
+      </div>
     </div>
-    <!--end of container-->
+    <hr>
+  </div>
 </section>
 <section class="text-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-12">
-                <div class="feature">
-                    <div class="radial" data-value="<%= @meal.mood_rating * 10 %>" data-size="208" data-bar-width="8" data-color="#4a90e2">
-                        <span class="h3 radial__label">Mood</span>
-                    </div>
-                    <!--end radial-->
-                    <p>
-                        Stack is built with customization and ease-of-use at its core — whether you're a seasoned developer or just starting out.
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-4 col-12">
-                <div class="feature">
-                    <div class="radial" data-value="66" data-size="208" data-bar-width="8" data-color="#4a90e2">
-                        <span class="h3 radial__label">Focus</span>
-                    </div>
-                    <!--end radial-->
-                    <p>
-                        Select from over 270 interface blocks, customise the look to build your perfect page.
-                    </p>
-                </div>
-            </div>
-
-            <div class="col-md-4 col-12">
-                <div class="feature">
-                    <div class="radial" data-value="66" data-size="208" data-bar-width="8" data-color="#4a90e2">
-                        <span class="h3 radial__label">Pain</span>
-                    </div>
-                    <!--end radial-->
-                    <p>
-                        Select from over 270 interface blocks, customise the look to build your perfect page.
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-4 col-12">
-                <div class="feature">
-                    <div class="radial" data-value="<%= @meal.sleep_rating * 10 %>" data-size="208" data-bar-width="8" data-color="#4a90e2">
-                        <span class="h3 radial__label">Sleep</span>
-                    </div>
-                    <!--end radial-->
-                    <p>
-                        Download your page as a semantic HTML document and easily make further customisations and additions in your editor.
-                    </p>
-                </div>
-            </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-12">
+        <div class="feature">
+          <div class="radial" data-value="<%= @meal.mood_rating * 10 %>" data-size="208" data-bar-width="8" data-color="#4a90e2">
+            <span class="h3 radial__label">Mood</span>
+          </div>
         </div>
-        <!--end of row-->
+      </div>
+      <div class="col-md-4 col-12">
+        <div class="feature">
+          <div class="radial" data-value="66" data-size="208" data-bar-width="8" data-color="#4a90e2">
+            <span class="h3 radial__label">Focus</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-12">
+        <div class="feature">
+          <div class="radial" data-value="66" data-size="208" data-bar-width="8" data-color="#4a90e2">
+            <span class="h3 radial__label">Pain</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-12">
+        <div class="feature">
+          <div class="radial" data-value="<%= @meal.sleep_rating * 10 %>" data-size="208" data-bar-width="8" data-color="#4a90e2">
+            <span class="h3 radial__label">Sleep</span>
+          </div>
+        </div>
+      </div>
     </div>
-    <!--end of container-->
+    <hr>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="row justify-content-between">
+      <div class="offset-md-3 col">
+        <div class="text-block">
+          <h3>Psychological Symptoms</h3>
+          <p><%= @meal.psychological_symptoms %></p>
+
+          <h3>Physical Symptoms</h3>
+          <p><%= @meal.physical_symptoms %></p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 <section>
     <div class="container">
@@ -118,77 +94,6 @@
                             <img alt="Image" src="img/work-single-4.jpg" />
                         </li>
                     </ul>
-                </div>
-            </div>
-        </div>
-        <!--end of row-->
-    </div>
-    <!--end of container-->
-</section>
-<section class="bg--secondary">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="text-block">
-                    <h4>Related Case Studies</h4>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="project-thumb hover-element border--round hover--active">
-                    <a href="portfolio-single-1.html#">
-                        <div class="hover-element__initial">
-                            <div class="background-image-holder">
-                                <img alt="background" src="img/work-2.jpg" />
-                            </div>
-                        </div>
-                        <div class="hover-element__reveal" data-scrim-top="5">
-                            <div class="project-thumb__title">
-                                <h4>Get Lost! Thailand</h4>
-                                <span>Print Marketing</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <!--end item-->
-            <div class="col-md-6">
-                <div class="project-thumb hover-element border--round hover--active">
-                    <a href="portfolio-single-1.html#">
-                        <div class="hover-element__initial">
-                            <div class="background-image-holder">
-                                <img alt="background" src="img/work-3.jpg" />
-                            </div>
-                        </div>
-                        <div class="hover-element__reveal" data-scrim-top="5">
-                            <div class="project-thumb__title">
-                                <h4>M&amp;D Stairs Company</h4>
-                                <span>Branding &amp; Identity</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <!--end item-->
-        </div>
-        <!--end of row-->
-    </div>
-    <!--end of container-->
-</section>
-<section class="text-center">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8 col-lg-6">
-                <div class="cta">
-                    <h2>Ready to start your project?</h2>
-                    <p class="lead">
-                        Each purchase of Stack comes with six months free support &mdash; and a lifetime of free content and bug-fix updates.
-                    </p>
-                    <a class="btn btn--primary type--uppercase" href="https://themeforest.net/item/stack-multipurpose-html-with-page-builder/19337626?ref=medium_rare">
-                        <span class="btn__text">
-                            Purchase on Envato
-                        </span>
-                        <span class="label">$19 USD</span>
-                    </a>
                 </div>
             </div>
         </div>

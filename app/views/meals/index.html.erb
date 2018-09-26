@@ -1,82 +1,34 @@
-<section class="text-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-lg-8">
-                <h1>Dashboard</h1>
-                <p class="lead">
-                    Got what it takes to work with us? Great! Send us a link to your resumé or portfolio to become part of our talent pool.
-                </p>
-
-                <%= link_to 'Add meal', new_meal_path, class: "btn btn--primary type--uppercase text-white" %>
-            </div>
-        </div>
-        <!--end of row-->
-    </div>
-    <!--end of container-->
-</section>
-<section class="text-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-lg-8">
-                <h2>Charts</h2>
-
-
-
-            </div>
-        </div>
-        <!--end of row-->
-    </div>
-    <!--end of container-->
-</section>
-<section class="text-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-12">
-                <div class="feature">
-                    <div class="radial" data-value="33" data-size="208" data-bar-width="8" data-color="#4a90e2">
-                        <span class="h3 radial__label">Concept</span>
-                    </div>
-                    <!--end radial-->
-                    <p>
-                        Stack is built with customization and ease-of-use at its core — whether you're a seasoned developer or just starting out.
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-4 col-12">
-                <div class="feature">
-                    <div class="radial" data-value="66" data-size="208" data-bar-width="8" data-color="#4a90e2">
-                        <span class="h3 radial__label">Plan</span>
-                    </div>
-                    <!--end radial-->
-                    <p>
-                        Select from over 270 interface blocks, customise the look to build your perfect page.
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-4 col-12">
-                <div class="feature">
-                    <div class="radial" data-value="100" data-size="208" data-bar-width="8" data-color="#4a90e2">
-                        <span class="h3 radial__label">Construct</span>
-                    </div>
-                    <!--end radial-->
-                    <p>
-                        Download your page as a semantic HTML document and easily make further customisations and additions in your editor.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <!--end of row-->
-    </div>
-    <!--end of container-->
-</section>
 <section>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="heading-block">
-            <h2>Meals</h2>
-          </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h1>Dashboard</h1>
+      </div>
+      <div class="col-md-6">
+        <%= link_to 'Add meal', new_meal_path, class: "btn btn--primary type--uppercase text-white float-right" %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-lg-8">
+        <h2>Charts</h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="heading-block">
+          <h2>Meals</h2>
         </div>
+      </div>
 
       <% @meals.each do |meal| %>
         <div class="col-md-4">
@@ -91,22 +43,4 @@
       <% end %>
     </div>
   </div>
-</section>
-<section class="text-center">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8 col-lg-6">
-                <div class="cta">
-                    <h2>Add meal</h2>
-                    <p class="lead">
-                        Got what it takes to work with us? Great! Send us a link to your resumé or portfolio to become part of our talent pool.
-                    </p>
-
-                    <%= link_to 'Add meal', new_meal_path, class: "btn btn--primary type--uppercase text-white" %>
-                </div>
-            </div>
-        </div>
-        <!--end of row-->
-    </div>
-    <!--end of container-->
 </section>

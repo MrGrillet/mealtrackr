@@ -59,12 +59,14 @@ class MealsController < ApplicationController
     def meal_params
       params.require(:meal).permit(
         :title,
+        :meal_type,
+        :drink_count,
         :notes,
         :mood_rating,
         :sleep_rating,
         :physical_symptoms,
-        :psychological_symptoms
-
+        :psychological_symptoms,
+        food_ids: []
       )
     end
 end
