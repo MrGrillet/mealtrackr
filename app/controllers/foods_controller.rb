@@ -18,6 +18,7 @@ class FoodsController < ApplicationController
 
   def create
     @food = Food.new(food_params)
+    @food.food_category_id = 2
 
     respond_to do |format|
       if @food.save
@@ -59,7 +60,8 @@ class FoodsController < ApplicationController
       params.require(:food).permit(
         :title,
         :description,
-        :image
+        :image,
+        :food_category_id
       )
     end
 end

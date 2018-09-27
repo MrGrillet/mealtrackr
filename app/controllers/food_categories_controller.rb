@@ -3,7 +3,7 @@ class FoodCategoriesController < ApplicationController
   before_action :set_category, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    @category = FoodCategory.all
+    @categories = FoodCategory.all
   end
 
   def show

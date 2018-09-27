@@ -31,20 +31,22 @@
     placeholder: "colour", autofocus: true, autocomplete: "off" %>
   </div>
 
-  <div class="form-group row">
-    <p class="col-sm-4 col-form-label">Foods and Drinks in meal</p>
-    <div class="col">
-      <%= form.collection_check_boxes :food_category_ids, FoodCategory.all, :id, :name do |cb| %>
-        <div class="col-md-3 col-6 text-center">
-          <span class="block"><%= cb.text %></span>
-          <div class="input-checkbox">
-            <%= cb.check_box  %>
-            <label></label>
+
+
+  <div class="row">
+
+      <%= form.collection_radio_buttons(:food_category_id, FoodCategory.all, :id, :name) do |b| %>
+        <div class="col-md-4">
+          <div class="input-radio">
+            <span class="input__label"><%= b.text %></span>
+            <%= b.radio_button %>
+            <%= b.label { b.radio_button(class: "radio_button") }  %>
           </div>
         </div>
       <% end %>
-    </div>
+
   </div>
+
 
   <div class="actions mt-5">
     <%= link_to 'Dashboard', dashboard_path %>

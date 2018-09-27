@@ -16,22 +16,18 @@
       </div>
       <div class="col">
         <div class="text-block">
-          <h2>Description</h2>
           <p><%= @category.description %></p>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
     <div class="row">
       <div class="offset-md-4 col">
         <ul>
+          <% @category.foods.each do |food| %>
           <li>
-            <a href="#"><span class="badge badge-primary">Chicken</span></a>
+            <a href="<%= food_path(food) %>"><span class="badge badge-primary"><%= food.title %></span></a>
           </li>
+          <% end %>
         </ul>
       </div>
     </div>
