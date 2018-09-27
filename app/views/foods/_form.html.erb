@@ -26,24 +26,18 @@
     <%= form.text_field :image, id: :image, class: "form-control",
     placeholder: "image", autofocus: true, autocomplete: "off" %>
   </div>
-  <div class="form-group">
-    <%= form.text_field :colour, id: :colour, class: "form-control",
-    placeholder: "colour", autofocus: true, autocomplete: "off" %>
-  </div>
-
 
 
   <div class="row">
-
-      <%= form.collection_radio_buttons(:food_category_id, FoodCategory.all, :id, :name) do |b| %>
-        <div class="col-md-4">
-          <div class="input-radio">
-            <span class="input__label"><%= b.text %></span>
-            <%= b.radio_button %>
-            <%= b.label { b.radio_button(class: "radio_button") }  %>
-          </div>
+    <%= form.collection_radio_buttons(:food_category_id, FoodCategory.all, :id, :name) do |b| %>
+      <div class="col-md-4">
+        <div class="input-radio">
+          <span class="input__label"><%= b.text %></span>
+          <%= b.radio_button %>
+          <%= b.label { b.radio_button(class: "radio_button") }  %>
         </div>
-      <% end %>
+      </div>
+    <% end %>
 
   </div>
 

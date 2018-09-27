@@ -11,11 +11,16 @@
   </div>
 </section>
 
+<%= Meal.where(user: current_user ).all.select(:id, :mood_rating, :created_at) %>
+
 <section class="text-center">
   <div class="container">
     <div class="row">
       <div class="col-md-10 col-lg-8">
-        <h2>Charts</h2>
+        <%= area_chart [
+                    {name: "Mood", data: User.group_by_day(:created_at).count},
+                    {name: "New Profiles", data: Meal.group_by_day(:created_at).count}
+                    ] %>
       </div>
     </div>
   </div>

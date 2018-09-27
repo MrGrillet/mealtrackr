@@ -1911,3 +1911,20 @@ mr = function(a, b, c, d) {
   a.components.documentReady.push(a.wizard.documentReady),
   a
 }(mr, jQuery, window, document);
+
+
+
+toastr.options = {
+  "closeButton": true,
+  "debug": false,
+  "positionClass": "toast-bottom-left",
+  "onclick": null,
+  "showDuration": "300",
+  "hideDuration": "1000",
+  "timeOut": "5000",
+  "extendedTimeOut": "1000",
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "fadeIn",
+  "hideMethod": "fadeOut"
+}

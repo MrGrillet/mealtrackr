@@ -6,3 +6,5 @@
 //= require turbolinks
 //= require popper
 //= require toastr
+//= require Chart.bundle
+//= require chartkick
