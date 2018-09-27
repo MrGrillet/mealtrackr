@@ -1,84 +1,67 @@
 <div class="nav-container ">
-            <div class="bar bar--sm visible-xs">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-3 col-md-2">
-                            <a href="/">
-                              <%= image_tag("logo-dark.png", :alt => "logo", :class => "logo logo-dark") %>
-                              <%= image_tag("logo-light.png", :alt => "logo", :class => "logo logo-light") %>
-                            </a>
-                        </div>
-                        <div class="col-9 col-md-10 text-right">
-                            <a href="portfolio-case-study-2.html#" class="hamburger-toggle" data-toggle-class="#menu1;hidden-xs">
-                                <i class="icon icon--sm stack-interface stack-menu"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <!--end of row-->
-                </div>
-                <!--end of container-->
-            </div>
-            <!--end bar-->
-            <nav id="menu1" class="bar bar--sm bar-1 hidden-xs bg--dark">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-1 col-md-2 hidden-xs">
-                            <div class="bar__module">
-                                <a href="/">
-                                  <%= image_tag("logo-dark.png", :alt => "logo", :class => "logo logo-dark") %>
-                                  <%= image_tag("logo-light.png", :alt => "logo", :class => "logo logo-light") %>
-                                </a>
-                            </div>
-                            <!--end module-->
-                        </div>
-                        <div class="col-lg-11 col-md-12 text-right text-left-xs text-left-sm">
-                            <div class="bar__module">
-                                <ul class="menu-horizontal text-left">
-                                  <li>
-                                    <%= link_to 'Home', root_path %>
-                                  </li>
-                                  <li>
-                                    <%= link_to 'Dashboard', dashboard_path %>
-                                  </li>
-                                  <li>
-                                    <%= link_to 'Add meal', new_meal_path %>
-                                  </li>
-                                  <li>
-                                    <%= link_to 'Add food', new_food_path %>
-                                  </li>
-                                  <li>
-                                    <%= link_to 'Add category', new_food_category_path %>
-                                  </li>
-
-                                </ul>
-                            </div>
-                            <!--end module-->
-                            <div class="bar__module">
-
-                              <% if user_signed_in? %>
-                              <%= link_to('Logout', destroy_user_session_path, class: 'btn btn--sm type--uppercase text-white', title: 'Logout', :method => :delete) %>
-
-
-                              <% else %>
-                              <a class="btn btn--sm type--uppercase" href="<%= new_user_session_path %>">
-                                  <span class="btn__text">
-                                      Sign In
-                                  </span>
-                              </a>
-                              <a class="btn btn--sm btn--primary type--uppercase" href="<%= new_user_registration_path %>">
-                                  <span class="btn__text">
-                                      Sign up
-                                  </span>
-                              </a>
-
-                              <% end %>
-                            </div>
-                            <!--end module-->
-                        </div>
-                    </div>
-                    <!--end of row-->
-                </div>
-                <!--end of container-->
-            </nav>
-            <!--end bar-->
+  <div class="bar bar--sm visible-xs">
+    <div class="container">
+      <div class="row">
+        <div class="col-3 col-md-2">
+          <a href="/">
+            <%= image_tag("logo-dark.png", :alt => "logo", :class => "logo logo-dark") %>
+            <%= image_tag("logo-light.png", :alt => "logo", :class => "logo logo-light") %>
+          </a>
         </div>
+        <div class="col-9 col-md-10 text-right">
+          <a href="/" class="hamburger-toggle" data-toggle-class="#menu1;hidden-xs">
+            <i class="icon icon--sm stack-interface stack-menu"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav id="menu1" class="bar bar--sm bar-1 hidden-xs bg--dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-1 col-md-2 hidden-xs">
+          <div class="bar__module">
+            <a href="/">
+              <%= image_tag("logo-dark.png", :alt => "logo", :class => "logo logo-dark") %>
+              <%= image_tag("logo-light.png", :alt => "logo", :class => "logo logo-light") %>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-11 col-md-12 text-right text-left-xs text-left-sm">
+          <div class="bar__module">
+            <ul class="menu-horizontal text-left">
+              <li><%= link_to 'Home', root_path %></li>
+              <% if user_signed_in? %>
+                <li><%= link_to 'Dashboard', dashboard_path %></li>
+                <li><%= link_to 'Add meal', new_meal_path %></li>
+                <li><%= link_to 'Add food', new_food_path %></li>
+                <li><%= link_to 'Add category', new_food_category_path %></li>
+                <li><%= link_to 'Edit Profile', edit_user_path(current_user) %></li>
+              <% else %>
+                <li><%= link_to 'About', root_path %></li>
+              <% end %>
+              <li><%= link_to 'FAQ', root_path %></li>
+              <li><%= link_to 'Contact', root_path %></li>
+            </ul>
+          </div>
+          <div class="bar__module">
+            <% if user_signed_in? %>
+              <%= link_to('Logout', destroy_user_session_path, class: 'btn btn--sm type--uppercase text-white', title: 'Logout', :method => :delete) %>
+            <% else %>
+              <a class="btn btn--sm type--uppercase" href="<%= new_user_session_path %>">
+                <span class="btn__text">
+                  Sign In
+                </span>
+              </a>
+              <a class="btn btn--sm btn--primary type--uppercase" href="<%= new_user_registration_path %>">
+                <span class="btn__text">
+                  Sign up
+                </span>
+              </a>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>

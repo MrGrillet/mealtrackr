@@ -6,7 +6,9 @@
                   <h5>Welcome</h5>
                   <section class="text-center">
                       <div class="pos-vertical-center">
-                          <img alt="pic" src="img/art-2.jpg" />
+                        <%= image_tag("art-2.jpg") %>
+
+
                           <h4>Welcome, let's go over the basics!</h4>
                           <p class="type--fade type--fine-print">
                               * Use the next button, or your keyboard arrows to advance
@@ -16,7 +18,8 @@
                   <h5>Media</h5>
                   <section class="text-center">
                       <div class="pos-vertical-center">
-                          <img alt="pic" src="img/art-3.jpg" />
+                        <%= image_tag("art-3.jpg") %>
+
                           <h4>Add your own media using the media browser.</h4>
                           <p class="type--fade type--fine-print">
                               * Use the sidebar and click "Add Media"
@@ -26,7 +29,7 @@
                   <h5>Device Guide</h5>
                   <section class="text-center">
                       <div class="pos-vertical-center">
-                          <img alt="pic" src="img/art-4.jpg" />
+                          <%= image_tag("art-4.jpg") %>
                           <h4>Test your site on different devices using Device Guide</h4>
                           <p class="type--fade type--fine-print">
                               * The device guide is located in the sidebar
@@ -36,18 +39,16 @@
                   <h5>Begin</h5>
                   <section class="text-center">
                       <div class="pos-vertical-center">
-                          <img alt="pic" src="img/art-5.png" />
+                          <%= image_tag("art-5.png") %>
                           <h4>You're all set — Click 'Finish' to get started</h4>
                           <p class="type--fade type--fine-print">
                               * Find more help articles under "Help" in the sidebar
                           </p>
-                          <%= link_to 'Get Started', root_path, class: 'btn btn--primary' %>
+                          <%= link_to 'Finish', edit_user_path(current_user), class: 'btn btn--primary text-white' %>
                       </div>
                   </section>
               </div>
           </div>
       </div>
-      <!--end of row-->
   </div>
-  <!--end of container-->
 </section>

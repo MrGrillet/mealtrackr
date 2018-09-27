@@ -1,7 +1,8 @@
 //= require_self
-//= require jquery3
-//= require bootstrap-sprockets
 //= require rails-ujs
+//= require jquery3
+//= require headroom
+//= require bootstrap-sprockets
 //= require turbolinks
 //= require popper
 //= require toastr

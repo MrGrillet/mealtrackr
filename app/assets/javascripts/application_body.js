@@ -1,4 +1,5 @@
 //= require_self
+
 //= require ./body/app
 //= require ./body/flickity.min
 //= require ./body/easypiechart.min
@@ -15,6 +16,8 @@
 //= require ./body/spectragram.min
 //= require ./body/smooth-scroll.min
 //= require ./body/scripts
+
+
 
 
 toastr.options = {

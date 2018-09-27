@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-lg-5 col-md-7">
                 <h2>Create a Mealtrackr account</h2>
-                <p class="lead">Get started with a 14 day free trial, No credit card required &mdash; cancel at any time.</p>
+                <p class="lead">Get started for free</p>
                 <a class="btn block btn--icon bg--facebook type--uppercase" href="page-accounts-create-2.html#">
                     <span class="btn__text">
                         <i class="socicon-facebook"></i>
@@ -28,12 +28,10 @@
                     <%= bootstrap_devise_error_messages! %>
                     <div class="row">
                         <div class="col-12">
-                            <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
-
-
+                            <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control', placeholder: "Email Address" %>
                         </div>
                         <div class="col-12">
-                            <%= f.password_field :password, autocomplete: 'current-password', class: 'form-control' %>
+                            <%= f.password_field :password, placeholder: 'Password', class: 'form-control' %>
                             <% if @minimum_password_length %>
                               <small class="form-text text-muted"><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></small>
                             <% end %>
@@ -41,7 +39,7 @@
 
 
                         <div class="col-12">
-                            <%= f.password_field :password_confirmation, autocomplete: 'current-password', class: 'form-control' %>
+                            <%= f.password_field :password_confirmation, autocomplete: 'current-password', class: 'form-control', placeholder: "Confirm Password" %>
                         </div>
 
 

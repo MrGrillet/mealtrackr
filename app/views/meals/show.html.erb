@@ -9,7 +9,7 @@
     <div class="row justify-content-between">
       <div class="col-md-4 col-lg-3">
         <div class="text-block">
-          <ul class="">
+          <ul>
             <% @meal.foods.each do |food| %>
               <li><a href="#">
                 <span class="badge badge-primary"><%= food.title %></span></a>
@@ -21,6 +21,7 @@
       <div class="col">
         <div class="text-block">
           <h3>Notes</h3>
+          <h5><%= @meal.meal_type %></h5>
           <p><%= @meal.notes %></p>
         </div>
       </div>
@@ -56,6 +57,13 @@
         <div class="feature">
           <div class="radial" data-value="<%= @meal.sleep_rating * 10 %>" data-size="208" data-bar-width="8" data-color="#4a90e2">
             <span class="h3 radial__label">Sleep</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-12">
+        <div class="feature">
+          <div class="radial" data-value="<%= @meal.drink_count * 10 %>" data-size="208" data-bar-width="8" data-color="#4a90e2">
+            <span class="h3 radial__label"><%= @meal.drink_count %> Drinks</span>
           </div>
         </div>
       </div>
