@@ -1,13 +1,13 @@
 <section class="bg--secondary space--sm">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="boxed boxed--lg boxed--border">
-                    <div class="text-block text-center">
-                        <img alt="avatar" src="img/avatar-round-3.png" class="image--sm" />
-                        <span class="h5">Lucas Banks</span>
-                        <span>Pro Account</span>
-                        <span class="label">Pro</span>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="boxed boxed--lg boxed--border">
+          <div class="text-block text-center">
+            <img alt="avatar" src="img/avatar-round-3.png" class="image--sm" />
+            <span class="h5">User Name</span>
+            <span>User Type</span>
+            <span class="label">is_admin?</span>
                     </div>
                     <hr>
                     <div class="text-block">
@@ -39,19 +39,15 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <label>Real Name:</label>
-                                    <input type="text" name="name" value="Lucas Banks" />
+                                    <input type="text" name="name" value="" />
                                 </div>
                                 <div class="col-md-6">
-                                    <label>Display Name:</label>
-                                    <input type="text" name="display-name" value="l_banks" />
+                                    <label>User Name:</label>
+                                    <input type="text" name="display-name" value="" />
                                 </div>
                                 <div class="col-md-12">
                                     <label>Email Address:</label>
-                                    <input type="email" name="email" value="l_banks@stack.net" />
-                                </div>
-                                <div class="col-md-12">
-                                    <label>Location:</label>
-                                    <input type="text" name="location" value="Melbourne" />
+                                    <input type="email" name="email" value="<%= @user.email %>" />
                                 </div>
                                 <div class="col-md-12">
                                     <label>Website:</label>
