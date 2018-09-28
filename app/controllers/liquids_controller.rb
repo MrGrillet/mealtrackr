@@ -20,7 +20,7 @@ class LiquidsController < ApplicationController
     @liquid = Liquid.new(liquid_params)
 
     respond_to do |format|
-      if @fluid.save
+      if @liquid.save
         format.html { redirect_to @liquid, notice: 'Liquid was successfully created.' }
         format.json { render :show, status: :created, location: @liquid }
       else

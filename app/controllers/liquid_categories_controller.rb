@@ -60,7 +60,8 @@ class LiquidCategoriesController < ApplicationController
         :name,
         :colour,
         :type,
-        :units
+        :units,
+        :description
       )
     end
 end

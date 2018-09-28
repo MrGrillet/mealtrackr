@@ -4,10 +4,14 @@
       <div class="col-lg-4">
         <div class="boxed boxed--lg boxed--border">
           <div class="text-block text-center">
-            <img alt="avatar" src="img/avatar-round-3.png" class="image--sm" />
-            <span class="h5">User Name</span>
-            <span>User Type</span>
-            <span class="label">is_admin?</span>
+            <% if @user.image %>
+              <img alt="avatar" src="<%= @user.image %>" class="image--sm" />
+            <% end %>
+            <span class="h5"><%= @user.first_name %> <%= @user.last_name %></span>
+            <span><%= @user.biography %></span>
+            <% if @user.is_admin? %>
+              <span class="label">Admin</span>
+            <% end %>
                     </div>
                     <hr>
                     <div class="text-block">

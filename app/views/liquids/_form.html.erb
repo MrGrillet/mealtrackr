@@ -1,4 +1,4 @@
-<%= form_with(model: @liquids, local: true) do |form| %>
+<%= form_with(model: @liquid, local: true) do |form| %>
   <% if @liquid.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@liquid.errors.count, "error") %> prohibited this food from being saved:</h2>

@@ -1,5 +1,29 @@
-<h1>Users</h1>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Users</h1>
+        <hr>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="row">
+      <% @users.each do |user| %>
+        <div class="col-md-4">
 
-<% @users.each do |user| %>
-  <%= user.email %> - <%= link_to 'View', user_path(user) %></br>
-<% end %>
+            <div class="feature feature-1 boxed boxed--border">
+              <!-- <span class="label">Keyword</span> -->
+              <h4><%= user.email %></h4>
+              <p></p>
+              <%= link_to 'View', user_path(user), class: "btn btn--primary text-white" %>
+
+            </div>
+
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
