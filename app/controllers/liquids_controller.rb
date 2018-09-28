@@ -18,6 +18,7 @@ class LiquidsController < ApplicationController
 
   def create
     @liquid = Liquid.new(liquid_params)
+    @liquid.user = current_user
 
     respond_to do |format|
       if @liquid.save

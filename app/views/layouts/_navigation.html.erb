@@ -33,6 +33,7 @@
               <li><%= link_to 'Home', root_path %></li>
               <% if user_signed_in? %>
                 <li><%= link_to 'Dashboard', dashboard_path %></li>
+                <li><%= link_to 'Me', user_path(current_user) %></li>
                 <li><%= link_to 'Feeling', feelings_path %></li>
                 <li><%= link_to 'Meals', meals_path %></li>
                 <li><%= link_to 'Liquids', liquids_path %></li>

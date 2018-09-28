@@ -48,15 +48,15 @@
                           <span class="h6 type--uppercase type--fade">Meals</span>
                       </li>
                       <li class="col-md-3 col-6">
-                          <span class="h3"><%= '?' %></span>
+                          <span class="h3"><%= @user.liquids.count %></span>
                           <span class="h6 type--uppercase type--fade">Drinks</span>
                       </li>
                       <li class="col-md-3 col-6">
-                          <span class="h3">?</span>
-                          <span class="h6 type--uppercase type--fade">Foods</span>
+                          <span class="h3"><%= @user.feelings.count %></span>
+                          <span class="h6 type--uppercase type--fade">Feelings</span>
                       </li>
                       <li class="col-md-3 col-6">
-                          <span class="h3">?</span>
+                          <span class="h3"><%= @user.feelings.where(sleep_rating: !nil ).count %></span>
                           <span class="h6 type--uppercase type--fade">Sleep</span>
                       </li>
                   </ul>
