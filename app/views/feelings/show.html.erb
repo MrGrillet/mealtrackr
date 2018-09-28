@@ -9,6 +9,43 @@
   </div>
 </section>
 
+<section class="text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-12">
+        <div class="feature">
+          <div class="radial" data-value="<%= @feeling.mood_rating * 10 if @feeling.mood_rating %>" data-size="208" data-bar-width="8" data-color="#4a90e2">
+            <span class="h3 radial__label">Mood</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-12">
+        <div class="feature">
+          <div class="radial" data-value="<%= @feeling.focus_rating * 10 if @feeling.focus_rating %>" data-size="208" data-bar-width="8" data-color="#4a90e2">
+            <span class="h3 radial__label">Focus</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-12">
+        <div class="feature">
+          <div class="radial" data-value="<%= @feeling.pain_rating * 10 if @feeling.pain_rating %>" data-size="208" data-bar-width="8" data-color="#4a90e2">
+            <span class="h3 radial__label">Pain</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-12">
+        <div class="feature">
+          <div class="radial" data-value="<%= @feeling.sleep_rating * 10 if @feeling.sleep_rating %>" data-size="208" data-bar-width="8" data-color="#4a90e2">
+            <span class="h3 radial__label">Sleep</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <hr>
+  </div>
+</section>
+
 <section>
   <div class="container">
     <div class="row">

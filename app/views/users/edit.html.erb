@@ -31,35 +31,66 @@
                             <li>
                                 <a href="page-accounts-settings.html#" data-toggle-class=".account-tab:not(.hidden);hidden|#account-delete;hidden">Delete Account</a>
                             </li>
+
                         </ul>
                     </div>
                 </div>
             </div>
+
             <div class="col-lg-8">
                 <div class="boxed boxed--lg boxed--border">
                     <div id="account-profile" class="account-tab">
                         <h4>Profile</h4>
-                        <form>
+                        <%= form_with(model: @user, local: true) do |form| %>
+                          <% if @user.errors.any? %>
+                            <div id="error_explanation">
+                              <h2><%= pluralize(@user.errors.count, "error") %> prohibited this meal from being saved:</h2>
+
+                              <ul>
+                              <% @user.errors.full_messages.each do |message| %>
+                                <li><%= message %></li>
+                              <% end %>
+                              </ul>
+                            </div>
+                          <% end %>
+
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label>Real Name:</label>
-                                    <input type="text" name="name" value="" />
+                                    <label>First Name:</label>
+                                    <%= form.text_field :first_name, id: :first_name, class: "form-control",
+                                  placeholder: "", autofocus: true %>
                                 </div>
                                 <div class="col-md-6">
-                                    <label>User Name:</label>
-                                    <input type="text" name="display-name" value="" />
+                                    <label>Last Name:</label>
+                                    <%= form.text_field :last_name, id: :last_name, class: "form-control",
+                                  placeholder: "", autofocus: true %>
+                                </div>
+                                <div class="col-md-12">
+                                    <label>Username:</label>
+                                    <%= form.text_field :username, id: :username, class: "form-control",
+                                  placeholder: "", autofocus: true %>
                                 </div>
                                 <div class="col-md-12">
                                     <label>Email Address:</label>
-                                    <input type="email" name="email" value="<%= @user.email %>" />
+                                    <%= form.text_field :email, id: :email, class: "form-control",
+                                  placeholder: "", autofocus: true %>
                                 </div>
                                 <div class="col-md-12">
                                     <label>Website:</label>
-                                    <input type="text" name="website" value="http://mrare.co" />
+                                    <%= form.text_field :website, id: :website, class: "form-control",
+                                  placeholder: "", autofocus: true %>
                                 </div>
                                 <div class="col-md-12">
-                                    <label>Bio:</label>
-                                    <textarea rows="4" name="bio"></textarea>
+                                    <label>Biography:</label>
+                                    <%= form.text_area :biography, id: :biography, rows: 4, class: "form-control",
+                                    placeholder: "",
+                                    autofocus: true %>
+                                </div>
+                                <div class="col-md-12">
+                                    <label>Goal:</label>
+                                    <%= form.text_area :goal, id: :goal, rows: 4, class: "form-control",
+                                    placeholder: "",
+                                    autofocus: true %>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="input-checkbox input-checkbox--switch">
@@ -69,10 +100,10 @@
                                     <span>Allow my profile to be viewable by guests</span>
                                 </div>
                                 <div class="col-lg-3 col-md-4">
-                                    <button type="submit" class="btn btn--primary type--uppercase">Save Profile</button>
+                                    <%= form.submit 'Save Profile →', class: "btn btn-outline-dark float-right" %>
                                 </div>
                             </div>
-                        </form>
+                        <% end %>
                     </div>
                     <div id="account-notifications" class="hidden account-tab">
                         <h4>Email Notifications</h4>

@@ -3,6 +3,8 @@
     <div class="row">
       <div class="col-md-12">
         <h1>Dashboard</h1>
+
+        <%= [(@user.feelings.pluck(:mood_rating).inject(0, :+) / @user.feelings.pluck(:mood_rating).count * 10) ] %>
         <hr>
       </div>
     </div>
@@ -12,15 +14,16 @@
 <section class="text-center">
   <div class="container">
     <div class="row">
+
+
+
       <div class="col-md-10 col-lg-8">
         <%= area_chart [
-          {name: "Mood", data: User.group_by_day(:created_at).count},
-          {name: "Sleep", data: User.group_by_day(:created_at).count},
-          {name: "Pain", data: User.group_by_day(:created_at).count},
-          {name: "Alcoholic Drinks", data: User.group_by_day(:created_at).count},
-          {name: "Soft Drinks", data: User.group_by_day(:created_at).count},
-          {name: "New Profiles", data: Meal.group_by_day(:created_at).count}
-          ] %>
+          {name: "Mood", data: @user.feelings.select(:created_at, :mood_rating)},
+          {name: "Sleep", data: @user.feelings.select(:created_at, :sleep_rating)},
+          {name: "Pain", data: @user.feelings.select(:created_at, :pain_rating)}
+
+          ], colors: [ "#dddddd","#CFF8F2", "#ff69b4", '#ffa500', "#000000" ], points: false, library: {legend: {position: 'bottom'}}, width: "100%", height: "400px" %>
       </div>
     </div>
   </div>
@@ -42,28 +45,32 @@
     <div class="row">
       <div class="col-md-4">
         <div class="feature">
-          <div class="radial" data-value="66" data-size="208" data-bar-width="8" data-color="#4a90e2">
+          <div class="radial" data-value="<%=
+            (@user.feelings.pluck(:focus_rating).inject(0, :+) / @user.feelings.pluck(:focus_rating).count * 10) %>" data-size="208" data-bar-width="8" data-color="#4a90e2">
             <span class="h3 radial__label">Focus</span>
           </div>
         </div>
       </div>
       <div class="col-md-4">
         <div class="feature">
-          <div class="radial" data-value="66" data-size="208" data-bar-width="8" data-color="#4a90e2">
+          <div class="radial" data-value="<%=
+            (@user.feelings.pluck(:mood_rating).inject(0, :+) / @user.feelings.pluck(:mood_rating).count * 10) %>" data-size="208" data-bar-width="8" data-color="#4a90e2">
             <span class="h3 radial__label">Mood</span>
           </div>
         </div>
       </div>
       <div class="col-md-4">
         <div class="feature">
-          <div class="radial" data-value="66" data-size="208" data-bar-width="8" data-color="#4a90e2">
+          <div class="radial" data-value="<%=
+            (@user.feelings.pluck(:sleep_rating).inject(0, :+) / @user.feelings.pluck(:sleep_rating).count * 10) %>" data-size="208" data-bar-width="8" data-color="#4a90e2">
             <span class="h3 radial__label">Sleep</span>
           </div>
         </div>
       </div>
       <div class="col-md-4">
         <div class="feature">
-          <div class="radial" data-value="66" data-size="208" data-bar-width="8" data-color="#4a90e2">
+          <div class="radial" data-value="<%=
+            (@user.feelings.pluck(:pain_rating).inject(0, :+) / @user.feelings.pluck(:pain_rating).count * 10) %>" data-size="208" data-bar-width="8" data-color="#4a90e2">
             <span class="h3 radial__label">Pain</span>
           </div>
         </div>

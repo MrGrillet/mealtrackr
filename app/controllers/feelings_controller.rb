@@ -18,6 +18,7 @@ class FeelingsController < ApplicationController
 
   def create
     @feeling = Feeling.new(feeling_params)
+    @feeling.user = current_user
 
     respond_to do |format|
       if @feeling.save
@@ -59,6 +60,7 @@ class FeelingsController < ApplicationController
       params.require(:feeling).permit(
         :title,
         :notes,
+        :focus_rating,
         :mood_rating,
         :sleep_rating,
         :pain_rating,
