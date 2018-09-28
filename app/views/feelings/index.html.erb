@@ -1,0 +1,25 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Feelings</h1>
+        <%= link_to 'Add Feeling', new_feeling_path, class: "btn btn--primary text-white" %>
+        <hr>
+      </div>
+    </div>
+    <div class="row">
+      <% @feelings.each do |feeling| %>
+        <div class="col-md-4">
+          <a href="<%= feeling_path(feeling) %>">
+            <div class="feature feature-1 boxed boxed--border">
+              <!-- <span class="label">Keyword</span> -->
+              <h5><%= feeling.title %></h5>
+              <small><%= feeling.created_at.strftime("%m/%d/%Y") %></small>
+              <p><%= feeling.notes %></p>
+            </div>
+          </a>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>

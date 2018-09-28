@@ -16,7 +16,7 @@
     <div class="col">
       <%= form.text_field :title, id: :meal_title, class: "form-control",
     placeholder: "", autofocus: true %>
-  </div>
+    </div>
   </div>
 
   <div class="form-group row">
@@ -36,27 +36,6 @@
   </div>
 
   <div class="form-group row">
-    <p class="col-sm-4 col-form-label">Mood Rating</p>
-  	<div class="col">
-  		<%= form.select :mood_rating, options_for_select(1..10, 5) %>
-  	</div>
-  </div>
-
-  <div class="form-group row">
-    <p class="col-sm-4 col-form-label">Sleep Rating</p>
-  	<div class="col">
-  		<%= form.select :sleep_rating, options_for_select(1..10, 5) %>
-  	</div>
-  </div>
-
-  <div class="form-group row">
-    <p class="col-sm-4 col-form-label">Pain Rating</p>
-    <div class="col">
-      <%= form.select :sleep_rating, options_for_select(0..10) %>
-    </div>
-  </div>
-
-  <div class="form-group row">
     <p class="col-sm-4 col-form-label">Amount you drank in cups</p>
     <div class="col">
       <%= form.select :drink_count, options_for_select(0..10) %>
@@ -64,30 +43,7 @@
   </div>
 
   <div class="form-group row">
-    <p class="col-sm-4 col-form-label">Psychological Symptoms</p>
-    <div class="col">
-      <%= form.text_area :psychological_symptoms, id: :psychological_symptoms, rows: 5, class: "form-control",
-      placeholder: "",
-      autofocus: true %>
-    </div>
-  </div>
-
-
-  <div class="form-group row">
-    <p class="col-sm-4 col-form-label">Physical Symptoms</p>
-    <div class="col">
-      <%= form.text_area :physical_symptoms, id: :physical_symptoms, rows: 5, class: "form-control",
-      placeholder: "",
-      autofocus: true %>
-    </div>
-  </div>
-
-  <div class="col-md-12 text-center boxed">
-      <h5></h5>
-  </div>
-
-  <div class="form-group row">
-    <p class="col-sm-4 col-form-label">Foods and Drinks in meal</p>
+    <p class="col-sm-4 col-form-label">Foods</p>
     <div class="col">
       <%= form.collection_check_boxes :food_ids, Food.all, :id, :title do |cb| %>
         <div class="col-md-3 col-6 text-center">

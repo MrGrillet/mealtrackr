@@ -1,0 +1,35 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1><%= @category.name %></h1> <%= link_to 'Edit', edit_liquid_category_path(@category) %>
+        <hr>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="row justify-content-between">
+      <div class="col-md-4">
+        <div class="food-colour" style="background-color: #<%= @category.colour %>;"></div>
+      </div>
+      <div class="col">
+        <div class="text-block">
+          <p><%= @category.description %></p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="offset-md-4 col">
+        <ul>
+          <% @category.liquids.each do |liquid| %>
+          <li>
+            <a href="<%= liquid_path(liquid) %>"><span class="badge badge-primary"><%= liquid.title %></span></a>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

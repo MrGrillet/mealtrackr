@@ -1,0 +1,23 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1><%= @liquid.name %></h1>
+        <h5><%= @liquid.food_category.name %></h5>
+        <p><%= link_to 'Edit', edit_liquid_path(@liquid) %></p>
+        <hr>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="offset-md-4 col">
+        <div class="text-block">
+          <p><%= @liquid.description %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

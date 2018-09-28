@@ -1,0 +1,80 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Dashboard</h1>
+        <hr>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-lg-8">
+        <%= area_chart [
+          {name: "Mood", data: User.group_by_day(:created_at).count},
+          {name: "Sleep", data: User.group_by_day(:created_at).count},
+          {name: "Pain", data: User.group_by_day(:created_at).count},
+          {name: "Alcoholic Drinks", data: User.group_by_day(:created_at).count},
+          {name: "Soft Drinks", data: User.group_by_day(:created_at).count},
+          {name: "New Profiles", data: Meal.group_by_day(:created_at).count}
+          ] %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-lg-8">
+        <h2>Overview</h2>
+        <p>This is a list of averages</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="feature">
+          <div class="radial" data-value="66" data-size="208" data-bar-width="8" data-color="#4a90e2">
+            <span class="h3 radial__label">Focus</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature">
+          <div class="radial" data-value="66" data-size="208" data-bar-width="8" data-color="#4a90e2">
+            <span class="h3 radial__label">Mood</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature">
+          <div class="radial" data-value="66" data-size="208" data-bar-width="8" data-color="#4a90e2">
+            <span class="h3 radial__label">Sleep</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature">
+          <div class="radial" data-value="66" data-size="208" data-bar-width="8" data-color="#4a90e2">
+            <span class="h3 radial__label">Pain</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature">
+          <div class="radial" data-value="66" data-size="208" data-bar-width="8" data-color="#4a90e2">
+            <span class="h3 radial__label">Drinks</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

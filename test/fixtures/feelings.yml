@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sleep_rating: 1
+  pain_rating: 1
+  mood_rating: 1
+
+two:
+  sleep_rating: 1
+  pain_rating: 1
+  mood_rating: 1

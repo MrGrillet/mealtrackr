@@ -33,15 +33,20 @@
               <li><%= link_to 'Home', root_path %></li>
               <% if user_signed_in? %>
                 <li><%= link_to 'Dashboard', dashboard_path %></li>
-                <li><%= link_to 'Add meal', new_meal_path %></li>
-                <li><%= link_to 'Add food', new_food_path %></li>
-                <li><%= link_to 'Add category', new_food_category_path %></li>
+                <li><%= link_to 'Meals', meals_path %></li>
+                <li><%= link_to 'Liquids', liquids_path %></li>
+                <li>-</li>
+
+                <li><%= link_to 'Foods', foods_path %></li>
+                <li><%= link_to 'Food Categories', food_categories_path %></li>
+                <li><%= link_to 'Liquid Categories', liquid_categories_path %></li>
                 <li><%= link_to 'Edit Profile', edit_user_path(current_user) %></li>
+
               <% else %>
                 <li><%= link_to 'About', root_path %></li>
+                <li><%= link_to 'FAQ', root_path %></li>
+                <li><%= link_to 'Contact', root_path %></li>
               <% end %>
-              <li><%= link_to 'FAQ', root_path %></li>
-              <li><%= link_to 'Contact', root_path %></li>
             </ul>
           </div>
           <div class="bar__module">

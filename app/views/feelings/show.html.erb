@@ -1,0 +1,39 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1><%= @feeling.title %></h1><%= link_to 'Edit', edit_feeling_path(@feeling) %>
+        <hr>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="offset-md-4 col">
+        <div class="text-block">
+          <h3>Notes</h3>
+          <p><%= @feeling.notes %></p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="offset-md-4 col">
+        <div class="text-block">
+          <h3>Physical Symptoms</h3>
+          <p><%= @feeling.physical_symptoms %></p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="offset-md-4 col">
+        <div class="text-block">
+          <h3>Psychological Symptoms</h3>
+          <p><%= @feeling.psychological_symptoms %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

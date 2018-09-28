@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <h1>Dashboard</h1>
+        <h1>Meals</h1>
       </div>
       <div class="col-md-6">
         <%= link_to 'Add meal', new_meal_path, class: "btn btn--primary type--uppercase text-white float-right" %>
@@ -11,16 +11,18 @@
   </div>
 </section>
 
-<%= Meal.where(user: current_user ).all.select(:id, :mood_rating, :created_at) %>
-
 <section class="text-center">
   <div class="container">
     <div class="row">
       <div class="col-md-10 col-lg-8">
         <%= area_chart [
-                    {name: "Mood", data: User.group_by_day(:created_at).count},
-                    {name: "New Profiles", data: Meal.group_by_day(:created_at).count}
-                    ] %>
+          {name: "Mood", data: User.group_by_day(:created_at).count},
+          {name: "Sleep", data: User.group_by_day(:created_at).count},
+          {name: "Pain", data: User.group_by_day(:created_at).count},
+          {name: "Alcoholic Drinks", data: User.group_by_day(:created_at).count},
+          {name: "Soft Drinks", data: User.group_by_day(:created_at).count},
+          {name: "New Profiles", data: Meal.group_by_day(:created_at).count}
+          ] %>
       </div>
     </div>
   </div>
@@ -29,12 +31,6 @@
 <section>
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
-        <div class="heading-block">
-          <h2>Meals</h2>
-        </div>
-      </div>
-
       <% @meals.each do |meal| %>
         <div class="col-md-4">
           <a href="<%= meal_path(meal) %>">

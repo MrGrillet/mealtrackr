@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180927130737) do
+ActiveRecord::Schema.define(version: 20180928120515) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "feelings", force: :cascade do |t|
+    t.integer "sleep_rating"
+    t.integer "pain_rating"
+    t.integer "mood_rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "notes"
+    t.string "title"
+    t.string "physical_symptoms"
+    t.string "psychological_symptoms"
+  end
 
   create_table "food_categories", force: :cascade do |t|
     t.string "name"
@@ -40,6 +52,27 @@ ActiveRecord::Schema.define(version: 20180927130737) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "food_category_id"
+  end
+
+  create_table "liquid_categories", force: :cascade do |t|
+    t.string "name"
+    t.string "colour"
+    t.string "type"
+    t.integer "units"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "description"
+  end
+
+  create_table "liquids", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.integer "category"
+    t.string "image"
+    t.integer "liquid_category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "glass_count"
   end
 
   create_table "meals", force: :cascade do |t|

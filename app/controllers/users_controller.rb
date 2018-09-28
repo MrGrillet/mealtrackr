@@ -9,10 +9,15 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def dashboard
+    @feelings = Feeling.where(user: current_user)
+  end
+
   def show
   end
 
   private
+
   def set_user
     @user = User.find(params[:id])
   end
