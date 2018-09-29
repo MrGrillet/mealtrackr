@@ -27,14 +27,19 @@
               <li class="col-md-4">
                 <span class="type--fine-print block">Username:</span>
                 <a href="#"><%= @user.username %></a>
+                  <%= [@user.feelings.select(:id, :created_at, :mood_rating)] %>
               </li>
             </div>
           </ul>
         </div>
         <div class="boxed boxed--border">
           <h4>Overview</h4>
-          <%= area_chart [ {name: "Mood", data: User.group_by_day(:created_at).count}, {name: "Sleep", data: User.group_by_day(:created_at).count}, {name: "Pain", data: Meal.group_by_day(:created_at).count}, {name: "Focus", data:
-          User.group_by_day(:created_at).count} ], colors: [ "#dddddd","#CFF8F2", "#ff69b4", '#ffa500', "#000000" ], points: false, library: {legend: {position: 'bottom'}}, width: "100%", height: "400px" %>
+          <%= area_chart [
+            {name: "Mood", data: @user.feelings.group(:created_at).sum(:mood_rating)},
+            {name: "Sleep", data: @user.feelings.group(:created_at).sum(:sleep_rating)},
+            {name: "Pain", data: @user.feelings.group(:created_at).sum(:pain_rating)},
+            {name: "Focus", data: @user.feelings.group(:created_at).sum(:focus_rating)}
+          ], colors: [ "#dddddd","#CFF8F2", "#ff69b4", '#ffa500', "#000000" ], points: false, library: {legend: {position: 'bottom'}}, width: "100%", height: "400px" %>
         </div>
         <div class="boxed boxed--border">
           <h4>Logged</h4>
