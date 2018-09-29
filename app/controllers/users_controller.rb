@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [ :show, :edit, :update, :destroy]
 
   def welcome
   end
@@ -9,12 +9,9 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  def dashboard
-    @user = User.find(current_user.id)
-    @feelings = Feeling.where(user: current_user)
-  end
-
   def show
+    # @user = User.find(current_user)
+    @feelings = Feeling.where(user: current_user)
     @meals = Meal.where(user: @user)
   end
 
