@@ -62,19 +62,20 @@
     <div class="row">
       <% @meals.each do |meal| %>
         <div class="col-md-4">
-
-            <div class="feature feature-1 boxed boxed--border">
-              <h5><%= meal.title %></h5>
+          <div class="feature feature-1">
+            <img alt="Image" src="<%= asset_path('inner-5.jpg') %>" />
+            <div class="feature__body boxed boxed--lg boxed--border">
+              <small><%= meal.created_at.strftime("%m/%d/%Y") %></small>
+              <h3 class="mb-0"><%= meal.title %></h3>              
+              <p class="mb-4"><%# meal.notes.truncate(160) %></p>
               <ul>
                 <% meal.foods.each do |food| %>
                   <span class="badge badge-primary"><%= food.title %></span>
                 <% end %>
               </ul>
-              <p class="mb-4"><%= meal.notes.truncate(160) %></p>
-
-              <a href="<%= meal_path(meal) %>" class="btn btn--sm btn-block">View</a>
+              <a href="<%= meal_path(meal) %>" class="btn btn--sm btn-block">View &rarr;</a>
             </div>
-
+          </div>
         </div>
       <% end %>
     </div>

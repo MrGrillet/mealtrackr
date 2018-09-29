@@ -25,7 +25,7 @@
         <ul>
           <% @category.liquids.each do |liquid| %>
           <li>
-            <a href="<%= liquid_path(liquid) %>"><span class="badge badge-primary"><%= liquid.title %></span></a>
+            <a href="<%= liquid_path(liquid) %>"><span class="badge badge-primary"><%= liquid.name %></span></a>
           </li>
           <% end %>
         </ul>

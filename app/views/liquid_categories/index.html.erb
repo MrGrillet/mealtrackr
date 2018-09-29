@@ -1,9 +1,11 @@
 <section>
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-6">
         <h1>Liquid categories</h1>
-        <%= link_to 'Add new category', new_liquid_category_path, class: "btn btn--primary text-white" %>
+      </div>
+      <div class="col-md-6">
+        <%= link_to 'Add new category', new_liquid_category_path, class: "btn btn--primary text-white float-right" %>
       </div>
     </div>
   </div>
@@ -14,9 +16,8 @@
     <div class="row">
       <% @categories.each do |category| %>
         <div class="col-md-4">
-          <a href="<%= food_category_path(category) %>">
+          <a href="<%= liquid_category_path(category) %>">
             <div class="feature feature-1 boxed boxed--border">
-              <!-- <span class="label">Keyword</span> -->
               <h5><%= category.name %></h5>
             </div>
           </a>

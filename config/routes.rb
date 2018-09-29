@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => {:registrations => "registrations"}
   root 'marketing#index'
-  get 'dashboard', to: 'users#show'
+  get 'dashboard', to: 'users#dashboard'
   get 'welcome', to: 'users#welcome'
   resources :meals
   resources :foods

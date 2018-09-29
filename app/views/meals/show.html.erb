@@ -1,28 +1,86 @@
+<section class="text-center imagebg space--lg" data-overlay="3">
+    <div class="background-image-holder">
+        <img alt="background" src="img/landing-21.jpg" />
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-lg-6">
+                <h5><%= @meal.meal_type %></h5>
+                <h1><%= @meal.title %></h1>
+                <%= link_to 'Edit', edit_meal_path(@meal) %>
+                <p class="lead">
+                    An innovative collective of like-minded folks making useful and enduring technology products
+                </p>
+                <ul>
+                  <% @meal.foods.each do |food| %>
+                    <li class="float-left mr-3"><a href="#">
+                      <span class="badge badge-primary"><%= food.title %></span></a>
+                    </li>
+                  <% end %>
+                </ul>
+            </div>
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
+<section class="text-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8">
+                <h2>Notes</h2>
+                <p class="lead">
+                  <%= @meal.notes %>
+                </p>
+            </div>
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
+<section class="text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-11">
+                <div class="slider border--round" data-arrows="true" data-paging="true">
+                    <ul class="slides">
+                        <li>
+                            <img alt="Image" src="img/gallery-1.jpg" />
+                        </li>
+                        <li>
+                            <img alt="Image" src="img/cowork-1.jpg" />
+                        </li>
+                        <li>
+                            <img alt="Image" src="img/cowork-5.jpg" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
+
 <section>
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h1><%= @meal.title %></h1><%= link_to 'Edit', edit_meal_path(@meal) %>
+
         <hr>
       </div>
     </div>
     <div class="row justify-content-between">
       <div class="col-md-4 col-lg-3">
         <div class="text-block">
-          <ul>
-            <% @meal.foods.each do |food| %>
-              <li><a href="#">
-                <span class="badge badge-primary"><%= food.title %></span></a>
-              </li>
-            <% end %>
-          </ul>
+
         </div>
       </div>
       <div class="col">
         <div class="text-block">
-          <h3>Notes</h3>
-          <h5><%= @meal.meal_type %></h5>
-          <p><%= @meal.notes %></p>
+
+
+          <p></p>
         </div>
       </div>
     </div>

@@ -1,9 +1,11 @@
 <section>
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-6">
         <h1>Foods</h1>
-        <%= link_to 'Add new food', new_food_path, class: "btn btn--primary text-white" %>
+      </div>
+      <div class="col-md-6">
+        <%= link_to 'Add new food', new_food_path, class: "btn btn--primary text-white float-right" %>
       </div>
     </div>
   </div>
@@ -12,16 +14,20 @@
   <div class="container">
     <div class="row">
       <% @foods.each do |food| %>
+      <!-- <a href="<%= food_path(food) %>" class=""> -->
         <div class="col-md-4">
-          <a href="<%= food_path(food) %>">
-            <div class="feature feature-1 boxed boxed--border">
-              <!-- <span class="label">Keyword</span> -->
-              <h5><%= food.title %></h5>
-              <p><%= food.description %></p>
-              <p><%# food.food_category %></p>
+          <div class="feature feature-1">
+            <img alt="Image" src="<%= asset_path('inner-5.jpg') %>" />
+            <div class="feature__body boxed boxed--lg boxed--border">
+              <h3 class="mb-0"><%= food.title %></h3>
+              <span></span>
+              <span class="badge badge-primary"></span>
+              <p class="mb-4"><%# food.description %></p>
+              <a href="<%= food_path(food) %>" class="center btn btn-block">View &rarr;</a>
             </div>
-          </a>
+          </div>
         </div>
+        <!-- </a> -->
       <% end %>
     </div>
   </div>

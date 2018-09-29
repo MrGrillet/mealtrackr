@@ -1,9 +1,11 @@
 <section>
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-6">
         <h1>Liquids</h1>
-        <%= link_to 'Add new liquid', new_liquid_path, class: "btn btn--primary text-white" %>
+      </div>
+      <div class="col-md-6">
+        <%= link_to 'Add new liquid', new_liquid_path, class: "btn btn--primary text-white float-right" %>
       </div>
     </div>
   </div>
@@ -13,14 +15,19 @@
     <div class="row">
       <% @liquids.each do |liquid| %>
         <div class="col-md-4">
-
-            <div class="feature feature-1 boxed boxed--border">
-              <h4><%= liquid.liquid_category.name %></h4>
-              <p><%= liquid.name %></p>
-              <p class="mb-4"><%= liquid.glass_count %> Glasses</p>
-              <a href="<%= liquid_path(liquid) %>" class="btn btn--sm">View</a>
+          <div class="feature feature-1">
+            <a href="<%= liquid_path(liquid) %>" class="center">
+              <img alt="Image" src="<%= asset_path('inner-5.jpg') %>" />
+            </a>
+            <div class="feature__body boxed boxed--lg boxed--border">
+              <small><%= liquid.created_at.strftime("%m/%d/%Y") %></small>
+              <h3 class="mb-0"><%= liquid.name %></h3>
+              <span></span>
+              <span class="badge badge-primary"><%= liquid.liquid_category.name %></span>
+              <p class="mb-4"></p>
+              <a href="<%= liquid_path(liquid) %>" class="center btn btn--sm btn-block">View &rarr;</a>
             </div>
-
+          </div>
         </div>
       <% end %>
     </div>

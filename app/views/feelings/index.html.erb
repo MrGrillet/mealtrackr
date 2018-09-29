@@ -1,9 +1,11 @@
 <section>
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-6">
         <h1>Feelings</h1>
-        <%= link_to 'Add Feeling', new_feeling_path, class: "btn btn--primary text-white" %>
+      </div>
+      <div class="col-md-6">
+        <%= link_to 'Add Feeling', new_feeling_path, class: "btn btn--primary text-white float-right" %>
       </div>
     </div>
   </div>
@@ -17,10 +19,10 @@
             <div class="radial" data-value="<%= feeling.mood_rating * 10 %>" data-timing="1000" data-color="#4a90e2" data-size="100" data-bar-width="10">
               <span class="h3 radial__label"><%= feeling.mood_rating %></span>
              </div>
-             <h5><%= feeling.title %></h5>
-            <small><%= feeling.created_at.strftime("%m/%d/%Y") %></small>
-            <p class="mb-5"><%= feeling.notes.truncate(160) %></p>
-            <a href="<%= feeling_path(feeling) %>" class=" btn--sm btn-block">View</a>
+             <small><%= feeling.created_at.strftime("%m/%d/%Y") %></small>
+             <h3><%= feeling.title %></h3>
+
+            <a href="<%= feeling_path(feeling) %>" class="btn btn-block">View &rarr;</a>
           </div>
         </div>
       <% end %>
