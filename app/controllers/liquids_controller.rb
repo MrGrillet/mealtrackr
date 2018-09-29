@@ -49,6 +49,7 @@ class LiquidsController < ApplicationController
       format.html { redirect_to liquid_url, notice: 'Liquid was successfully destroyed.' }
       format.json { head :no_content }
     end
+    redirect_to dashboard_path
   end
 
   private

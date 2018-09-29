@@ -48,6 +48,7 @@ class FoodCategoriesController < ApplicationController
       format.html { redirect_to category_url, notice: 'Food category was successfully destroyed.' }
       format.json { head :no_content }
     end
+    redirect_to dashboard_path
   end
 
   private

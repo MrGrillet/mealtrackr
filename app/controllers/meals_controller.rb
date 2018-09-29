@@ -49,6 +49,7 @@ class MealsController < ApplicationController
       format.html { redirect_to meals_url, notice: 'Meal was successfully destroyed.' }
       format.json { head :no_content }
     end
+    redirect_to dashboard_path
   end
 
   private

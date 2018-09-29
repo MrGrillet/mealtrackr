@@ -29,63 +29,7 @@
     <hr>
   </div>
 </section>
-<section class="text-center">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4 col-12">
-        <div class="feature">
-          <div class="radial" data-value="<%= @meal.mood_rating * 10 %>" data-size="208" data-bar-width="8" data-color="#4a90e2">
-            <span class="h3 radial__label">Mood</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 col-12">
-        <div class="feature">
-          <div class="radial" data-value="66" data-size="208" data-bar-width="8" data-color="#4a90e2">
-            <span class="h3 radial__label">Focus</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 col-12">
-        <div class="feature">
-          <div class="radial" data-value="66" data-size="208" data-bar-width="8" data-color="#4a90e2">
-            <span class="h3 radial__label">Pain</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 col-12">
-        <div class="feature">
-          <div class="radial" data-value="<%= @meal.sleep_rating * 10 %>" data-size="208" data-bar-width="8" data-color="#4a90e2">
-            <span class="h3 radial__label">Sleep</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 col-12">
-        <div class="feature">
-          <div class="radial" data-value="<%= @meal.drink_count * 10 %>" data-size="208" data-bar-width="8" data-color="#4a90e2">
-            <span class="h3 radial__label"><%= @meal.drink_count %> Drinks</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <hr>
-  </div>
-</section>
-<section>
-  <div class="container">
-    <div class="row justify-content-between">
-      <div class="offset-md-3 col">
-        <div class="text-block">
-          <h3>Psychological Symptoms</h3>
-          <p><%= @meal.psychological_symptoms %></p>
 
-          <h3>Physical Symptoms</h3>
-          <p><%= @meal.physical_symptoms %></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 <section>
     <div class="container">
         <div class="row">
@@ -105,7 +49,5 @@
                 </div>
             </div>
         </div>
-        <!--end of row-->
     </div>
-    <!--end of container-->
 </section>

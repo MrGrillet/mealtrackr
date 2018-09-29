@@ -49,6 +49,7 @@ class FeelingsController < ApplicationController
       format.html { redirect_to feeling_url, notice: 'Feeling was successfully destroyed.' }
       format.json { head :no_content }
     end
+    redirect_to dashboard_path
   end
 
   private
