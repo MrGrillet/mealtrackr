@@ -4,25 +4,23 @@
       <div class="col-md-12">
         <h1>Liquids</h1>
         <%= link_to 'Add new liquid', new_liquid_path, class: "btn btn--primary text-white" %>
-        <hr>
       </div>
     </div>
   </div>
 </section>
-<section>
+<section class="bg--secondary">
   <div class="container">
     <div class="row">
       <% @liquids.each do |liquid| %>
         <div class="col-md-4">
-          <a href="<%= liquid_path(liquid) %>">
+
             <div class="feature feature-1 boxed boxed--border">
-              <!-- <span class="label">Keyword</span> -->
               <h4><%= liquid.liquid_category.name %></h4>
               <p><%= liquid.name %></p>
-              <p><%= liquid.glass_count %> Glasses</p>
-
+              <p class="mb-4"><%= liquid.glass_count %> Glasses</p>
+              <a href="<%= liquid_path(liquid) %>" class="btn btn--sm">View</a>
             </div>
-          </a>
+
         </div>
       <% end %>
     </div>

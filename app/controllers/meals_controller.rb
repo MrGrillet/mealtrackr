@@ -3,6 +3,7 @@ class MealsController < ApplicationController
   before_action :set_meal, only: [ :show, :edit, :update, :destroy ]
 
   def index
+    @user = User.find(current_user.id)
     @meals = Meal.where(user: current_user).sorted
   end
 

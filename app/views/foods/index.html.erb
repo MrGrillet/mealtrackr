@@ -4,19 +4,13 @@
       <div class="col-md-12">
         <h1>Foods</h1>
         <%= link_to 'Add new food', new_food_path, class: "btn btn--primary text-white" %>
-        <hr>
       </div>
     </div>
   </div>
 </section>
-<section>
+<section class="bg--secondary">
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
-        <div class="heading-block">
-          <h2>Exsiting foods</h2>
-        </div>
-      </div>
       <% @foods.each do |food| %>
         <div class="col-md-4">
           <a href="<%= food_path(food) %>">

@@ -10,13 +10,42 @@
     </div>
   </div>
 </section>
-
+<!--
 <section class="text-center">
   <div class="container">
     <div class="row">
+
+
+      go through the meals
+      find all the foods attached to each meal
+
+      go through foods
+      find the food item
+      give me the food category by date
+      show when that food item has come up by date
+
+
+
+      <% meals = @meals.select(:id, :created_at) %>
+      <% foods = FoodItem.where(meal_id: @meals).pluck(:food_id) %>
+      <% user_food_categories = Food.where(id: foods).select(:id, :title) %>
+      <% user_food_categories.each do |food_category| %>
+        <% food_category.title %><br>
+      <% end %>
+
+<%# bar_chart [
+  food_categories
+
+  ] %>
+
+      <%# [FoodCategory.where(id: @meals[0].food_items[0][:food_id])] %>
       <div class="col-md-10 col-lg-8">
-        <%= area_chart [
-          {name: "Mood", data: User.group_by_day(:created_at).count},
+        <%# area_chart [
+          # name: "Mood", data: @user.feelings.group(:created_at).sum(:mood_rating)
+
+
+
+          {name: "Food " FoodCategory.where(id: @meals[0].food_items[0][:food_id]).name, data: FoodCategory.where(id: @meals[0].food_items[0][:food_id])},
           {name: "Sleep", data: User.group_by_day(:created_at).count},
           {name: "Pain", data: User.group_by_day(:created_at).count},
           {name: "Alcoholic Drinks", data: User.group_by_day(:created_at).count},
@@ -26,20 +55,26 @@
       </div>
     </div>
   </div>
-</section>
+</section>   -->
 
-<section>
+<section class="bg--secondary">
   <div class="container">
     <div class="row">
       <% @meals.each do |meal| %>
         <div class="col-md-4">
-          <a href="<%= meal_path(meal) %>">
+
             <div class="feature feature-1 boxed boxed--border">
-              <!-- <span class="label">Keyword</span> -->
               <h5><%= meal.title %></h5>
-              <p><%= meal.notes %></p>
+              <ul>
+                <% meal.foods.each do |food| %>
+                  <span class="badge badge-primary"><%= food.title %></span>
+                <% end %>
+              </ul>
+              <p class="mb-4"><%= meal.notes.truncate(160) %></p>
+
+              <a href="<%= meal_path(meal) %>" class="btn btn--sm btn-block">View</a>
             </div>
-          </a>
+
         </div>
       <% end %>
     </div>

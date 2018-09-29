@@ -27,7 +27,6 @@
               <li class="col-md-4">
                 <span class="type--fine-print block">Username:</span>
                 <a href="#"><%= @user.username %></a>
-                  <%= [@user.feelings.select(:id, :created_at, :mood_rating)] %>
               </li>
             </div>
           </ul>
@@ -39,7 +38,8 @@
             {name: "Sleep", data: @user.feelings.group(:created_at).sum(:sleep_rating)},
             {name: "Pain", data: @user.feelings.group(:created_at).sum(:pain_rating)},
             {name: "Focus", data: @user.feelings.group(:created_at).sum(:focus_rating)}
-          ], colors: [ "#dddddd","#CFF8F2", "#ff69b4", '#ffa500', "#000000" ], points: false, library: {legend: {position: 'bottom'}}, width: "100%", height: "400px" %>
+          ], colors: [ "#dddddd","#CFF8F2", "#ff69b4", '#ffa500', "#000000" ],
+          points: false, library: {legend: {position: 'bottom'}}, width: "100%", height: "400px" %>
         </div>
         <div class="boxed boxed--border">
           <h4>Logged</h4>
@@ -108,8 +108,9 @@
                     </div>
                     <div class="col-lg-8 col-7 mb-5">
                       <span class="type--fine-print"><%= meal.created_at %></span>
-                      <a href="page-accounts-profile.html#" class="block color--primary"><%= meal.title %></a>
+                      <a href="<%= meal_path(meal)%>" class="block color--primary"><%= meal.title %></a>
                       <p><%= meal.notes.truncate(160) %></p>
+      
                     </div>
                   </div>
                 </li>
