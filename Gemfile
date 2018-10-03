@@ -22,6 +22,7 @@ gem 'toastr-rails'
 gem 'rails_12factor', group: :production
 gem 'chartkick'
 gem 'groupdate'
+gem 'bootstrap-datepicker-rails'
 
 
 

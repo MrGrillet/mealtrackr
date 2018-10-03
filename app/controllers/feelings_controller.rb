@@ -61,6 +61,7 @@ class FeelingsController < ApplicationController
       params.require(:feeling).permit(
         :title,
         :notes,
+        :date,
         :focus_rating,
         :mood_rating,
         :sleep_rating,
