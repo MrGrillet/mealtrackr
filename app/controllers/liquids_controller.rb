@@ -3,7 +3,7 @@ class LiquidsController < ApplicationController
   before_action :set_liquid, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    @liquids = Liquid.all
+    @liquids = Liquid.where(user: current_user)
   end
 
   def show

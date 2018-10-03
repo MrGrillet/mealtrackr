@@ -63,6 +63,13 @@
   </div>
 
   <div class="form-group row">
+    <p class="col-sm-4 col-form-label">Skin Irritation</p>
+    <div class="col">
+      <%= form.select :skin_irritation, options_for_select(0..10) %>
+    </div>
+  </div>
+
+  <div class="form-group row">
     <p class="col-sm-4 col-form-label">Psychological Symptoms</p>
     <div class="col">
       <%= form.text_area :psychological_symptoms, id: :psychological_symptoms, rows: 5, class: "form-control",

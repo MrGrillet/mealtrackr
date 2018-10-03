@@ -3,7 +3,7 @@ class FeelingsController < ApplicationController
   before_action :set_feeling, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    @feelings = Feeling.all
+    @feelings = Feeling.where(user: current_user)
   end
 
   def show
@@ -65,6 +65,7 @@ class FeelingsController < ApplicationController
         :mood_rating,
         :sleep_rating,
         :pain_rating,
+        :skin_irritation,
         :physical_symptoms,
         :psychological_symptoms
       )
