@@ -32,16 +32,6 @@
           </ul>
         </div>
         <div class="boxed boxed--border">
-          <h4>Overview</h4>
-          <%= area_chart [
-            {name: "Mood", data: @user.feelings.group(:created_at).sum(:mood_rating)},
-            {name: "Sleep", data: @user.feelings.group(:created_at).sum(:sleep_rating)},
-            {name: "Pain", data: @user.feelings.group(:created_at).sum(:pain_rating)},
-            {name: "Focus", data: @user.feelings.group(:created_at).sum(:focus_rating)}
-          ], colors: [ "#dddddd","#CFF8F2", "#ff69b4", '#ffa500', "#000000" ],
-          points: false, library: {legend: {position: 'bottom'}}, width: "100%", height: "400px" %>
-        </div>
-        <div class="boxed boxed--border">
           <h4>Logged</h4>
           <ul class="row row--list clearfix text-center">
             <li class="col-md-3 col-6">
@@ -63,7 +53,18 @@
           </ul>
         </div>
         <div class="boxed boxed--border">
-          <h4>Averages</h4>
+          <h4>Ratings Overview</h4>
+          <%= line_chart [
+            {name: "Mood", data: @user.feelings.group(:created_at).sum(:mood_rating)},
+            {name: "Sleep Quality", data: @user.feelings.group(:created_at).sum(:sleep_rating)},
+            {name: "Pain", data: @user.feelings.group(:created_at).sum(:pain_rating)},
+            {name: "Focus", data: @user.feelings.group(:created_at).sum(:focus_rating)}
+          ], colors: [ "#dddddd","#CFF8F2", "#ff69b4", '#ffa500', "#000000" ],
+          points: false, library: {legend: {position: 'bottom'}}, width: "100%", height: "400px" %>
+        </div>
+
+        <div class="boxed boxed--border">
+          <h4>Average Ratings</h4>
           <ul class="clearfix row row--list text-center">
             <li class="col-md-3 col-6">
               <div class="radial" data-value="<%=
@@ -97,7 +98,7 @@
           <div class="boxed boxed--border">
             <h4>Recent Meals</h4>
             <ul>
-              <% @meals.each do |meal| %>
+              <% @meals.reverse.each do |meal| %>
                 <li class="clearfix">
                   <hr>
                   <div class="row">
