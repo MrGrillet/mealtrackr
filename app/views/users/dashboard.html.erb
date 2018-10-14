@@ -96,6 +96,26 @@
             </li>
           </div>
           <div class="boxed boxed--border">
+            <h4>Vibes</h4>
+            <ul>
+              <% @feelings.limit(5).reverse.each do |feeling| %>
+                <li class="clearfix">
+                  <hr>
+                  <div class="row">
+
+                    <div class="offset-md-3 col-lg-8 col-7 mb-5">
+                      <h5><a href="<%= feeling_path(feeling)%>" class="block color--primary"><%= feeling.title %></a></h5>
+                      <p><%= feeling.notes.truncate(160) %></p>
+                      <span class="type--fine-print"><%= feeling.created_at %></span>
+                    </div>
+                  </div>
+                </li>
+              <% end %>
+            </ul>
+
+            <%= link_to "View All", feelings_path, class: "btn btn-block" %>
+          </div>
+          <div class="boxed boxed--border">
             <h4>Recent Meals</h4>
             <ul>
               <% @meals.reverse.each do |meal| %>
@@ -108,8 +128,9 @@
                       </div>
                     </div>
                     <div class="col-lg-8 col-7 mb-5">
+                      <h5><a href="<%= meal_path(meal)%>" class="block color--primary"><%= meal.title %></a></h5>
                       <span class="type--fine-print"><%= meal.created_at %></span>
-                      <a href="<%= meal_path(meal)%>" class="block color--primary"><%= meal.title %></a>
+
                       <p><%= meal.notes.truncate(160) %></p>
 
                     </div>
