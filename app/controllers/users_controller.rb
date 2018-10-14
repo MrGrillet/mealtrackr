@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 
   def show
     # @user = User.find(current_user)
-    @feelings = Feeling.all
+    @feelings = Feeling.where(user: @user)
     @meals = Meal.where(user: @user)
   end
 

@@ -111,7 +111,7 @@
                   </div>
 
                   <div class="col m-0 p-0">
-                    <div class="progress">
+                    <div class="progress" style="height: 15px;">
                       <div class="progress-bar" role="progressbar" style="width: <%= feeling.mood_rating * 10 %>%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
 
                       </div>
@@ -140,11 +140,11 @@
                   </div>
 
                   <div>
-                    <% meal.food_ids.each do |food| %>
+                    <%# meal.food_ids.each do |food| %>
                       <span class="badge badge-primary badge-pill">
-                        <%= FoodCategory.find(food).name  %>
+                        <%# FoodCategory.find(food).name  %>
                       </span>
-                    <% end %>
+                    <%# end %>
                   </div>
                 </li>
               <% end %>
